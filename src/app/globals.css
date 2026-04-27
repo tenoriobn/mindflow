@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-slate-950: #1d1e2c;
+  --color-slate-300: #cdcddd;
+
+  --background-header: linear-gradient(
+    87deg,
+    rgba(29, 30, 44, 1) 0%,
+    rgba(46, 46, 76, 0.87) 24%,
+    rgba(124, 116, 218, 0.29) 61%,
+    rgba(124, 116, 218, 0) 100%
+  );
+
+  --background-accordion: linear-gradient(
+    90deg,
+    rgba(29, 30, 44, 1) 0%,
+    rgba(96, 100, 146, 1) 100%
+  );
+
+  --background-text: linear-gradient(
+    180deg,
+    rgba(29, 30, 44, 1) 0%,
+    rgba(83, 82, 125, 1) 66%,
+    rgba(205, 205, 221, 1) 100%
+  );
+
+  --background-button-primary: linear-gradient(
+    90deg,
+    rgba(173, 145, 42, 1) 29%,
+    rgba(173, 145, 42, 1) 53%,
+    rgba(99, 75, 26, 1) 80%
+  );
+
+  --background-button-secondary: linear-gradient(
+    90deg,
+    rgba(113, 83, 41, 1) 29%,
+    rgba(163, 115, 39, 1) 53%,
+    rgba(113, 83, 41, 1) 80%,
+    rgba(29, 30, 44, 1) 100%
+  );
+
+  --background-button-whatsapp: linear-gradient(
+    90deg,
+    rgba(29, 30, 44, 1) 0%,
+    rgba(74, 176, 81, 0.85) 100%
+  );
+}
