@@ -1,9 +1,9 @@
+import Header from "./Header";
+
 export default function Home() {
   return (
     <>
-      <header className="bg-red-500">
-        <h1>Header</h1>
-      </header>
+      <Header />
 
       <main className="bg-blue-500 flex flex-1">
         <h2>Main</h2>
