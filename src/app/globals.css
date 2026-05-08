@@ -27,6 +27,13 @@
       rgba(29, 30, 44, 0) 57%
     );
 
+  --background-image-gradient-carousel: linear-gradient(
+    85deg,
+    rgba(29, 30, 44, 1) 22%,
+    rgba(124, 116, 218, 0.25) 50%,
+    rgba(124, 116, 218, 0) 69%
+  );
+
   --background-image-gradient-accordion: linear-gradient(
     90deg,
     rgba(29, 30, 44, 1) 0%,
