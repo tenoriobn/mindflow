@@ -16,19 +16,15 @@ const Header = () => {
 
         <MenuToggleButton
           icon={MenuIcon}
-          type="button"
           aria-label="Abrir menu de navegação"
           aria-expanded={isMenuActive}
-          aria-controls="primary-navigation"
           onClick={() => setIsMenuActive(true)}
           className="xl:hidden"
         />
 
         <Navbar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
 
-        <CTAButton aria-label="Começar agora" className="hidden justify-self-end xl:block">
-          Começar agora
-        </CTAButton>
+        <CTAButton className="hidden justify-self-end xl:block">Começar agora</CTAButton>
       </div>
     </header>
   );

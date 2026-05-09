@@ -8,8 +8,12 @@ const PartnerLogoCarousel = () => {
   const { trackRef, handleMouseEnter, handleMouseLeave } = useMotionTicker(40);
 
   return (
-    <div className="bg-gradient-carousel 3xl:p-[1.667vw] 3xl:rounded-r-[2.083vw] 3xl:rounded-bl-[2.083vw] w-full rounded-r-[1.25rem] rounded-bl-[1.25rem] bg-slate-950 p-4 md:rounded-r-[2.5rem] md:rounded-bl-[2.5rem] md:p-8">
+    <section
+      aria-label="Marcas parceiras"
+      className="bg-gradient-carousel 3xl:p-[1.667vw] 3xl:rounded-r-[2.083vw] 3xl:rounded-bl-[2.083vw] w-full rounded-r-[1.25rem] rounded-bl-[1.25rem] bg-slate-950 p-4 md:rounded-r-[2.5rem] md:rounded-bl-[2.5rem] md:p-8"
+    >
       <div
+        aria-hidden="true"
         className="overflow-hidden"
         style={{
           WebkitMaskImage:
@@ -27,12 +31,12 @@ const PartnerLogoCarousel = () => {
         >
           {duplicatedLogos.map(({ name, Logo }, index) => (
             <div key={`${name}-${index}`} className="flex shrink-0 items-center justify-center">
-              <Logo className="3xl:h-[2.5vw] h-10 w-auto" aria-label={name} />
+              <Logo className="3xl:h-[2.5vw] h-10 w-auto" aria-hidden="true" focusable="false" />
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

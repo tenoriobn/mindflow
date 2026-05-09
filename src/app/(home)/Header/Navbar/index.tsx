@@ -11,8 +11,9 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
 
   return (
     <>
-      <div
-        aria-hidden="true"
+      <button
+        type="button"
+        tabIndex={-1}
         onClick={() => setIsMenuActive(false)}
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity xl:hidden ${isMenuActive ? 'visible opacity-100' : 'invisible opacity-0'} `}
       />
@@ -28,7 +29,6 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
           <MenuToggleButton
             icon={CloseIcon}
             aria-label="Fechar menu de navegação"
-            aria-controls="primary-navigation"
             aria-expanded={isMenuActive}
             onClick={() => setIsMenuActive(false)}
           />
@@ -53,9 +53,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
           })}
         </ul>
 
-        <CTAButton aria-label="Começar agora" className="self-end justify-self-center xl:hidden">
-          Começar agora
-        </CTAButton>
+        <CTAButton className="self-end justify-self-center xl:hidden">Começar agora</CTAButton>
       </nav>
     </>
   );

@@ -77,6 +77,10 @@
     &::-webkit-scrollbar {
       width: 10px;
       transition: all 3s ease-in-out;
+
+      @media (min-width: 1992px) {
+        width: 0.56vw;
+      }
     }
 
     &::-webkit-scrollbar-track {
@@ -90,7 +94,7 @@
     }
 
     &::-webkit-scrollbar-thumb:hover {
-      background: #1d1e2cce;
+      background: #1d1e2cda;
     }
 
     * {

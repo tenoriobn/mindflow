@@ -56,4 +56,4 @@ export const partnerLogos: PartnerLogo[] = [
     name: 'Stripe',
     Logo: StripeLogo,
   },
-] as const;
+];
