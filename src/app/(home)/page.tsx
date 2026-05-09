@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="flex flex-1 p-4 md:p-8 2xl:px-21 2xl:py-8">
+      <main className="px-4 md:px-8 2xl:px-21">
         <HeroSection />
       </main>
 

@@ -3,8 +3,12 @@ import PartnerLogoCarousel from './PartnerLogoCarousel';
 
 const HeroSection = () => {
   return (
-    <section id="inicio" aria-labelledby="hero-section-title" className="w-full">
-      <div className="hero__background before:bg-gradient-hero-section-bg-overlay relative isolate h-max overflow-hidden rounded-tl-[1.25rem] rounded-r-[1.25rem] bg-slate-950 bg-[url(/images/bg-herosection.png)] p-4 md:rounded-tl-[2.5rem] md:rounded-r-[2.5rem] md:px-8 md:py-36">
+    <section
+      id="inicio"
+      aria-labelledby="hero-section-title"
+      className="3xl:pt-38 flex min-h-dvh w-full flex-col pt-23 pb-4 md:pt-31 md:pb-8 xl:pt-35"
+    >
+      <div className="hero__background before:bg-gradient-hero-section-bg-overlay relative isolate grid flex-1 items-center overflow-hidden rounded-tl-[1.25rem] rounded-r-[1.25rem] bg-slate-950 bg-[url(/images/bg-herosection.png)] p-4 md:rounded-tl-[2.5rem] md:rounded-r-[2.5rem] md:p-8">
         <div className="grid" style={{ gridTemplateColumns: 'min-content' }}>
           <h2
             id="hero-section-title"
