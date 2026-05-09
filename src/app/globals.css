@@ -67,8 +67,36 @@
 }
 
 @layer base {
-  button {
-    @apply cursor-pointer;
+  body {
+    @apply font-light;
+
+    button {
+      @apply cursor-pointer;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      transition: all 3s ease-in-out;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #9c9ca7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #1d1e2c;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #1d1e2cce;
+    }
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #1d1e2c #9c9ca7;
+    }
   }
 }
 
