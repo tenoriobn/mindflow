@@ -10,8 +10,8 @@ const Header = () => {
   const { isMenuActive, setIsMenuActive } = useMenuMobile();
 
   return (
-    <header className="fixed z-10 w-full px-4 pt-4 md:px-8 md:pt-8 2xl:px-21">
-      <div className="bg-gradient-header flex items-center justify-between gap-4 rounded-full bg-slate-950 p-3 pl-4 md:gap-8 md:pl-8 xl:grid xl:grid-cols-[1fr_auto_1fr]">
+    <header className="3xl:px-[3.2813vw] 3xl:pt-[1.667vw] fixed z-10 w-full px-4 pt-4 md:px-8 md:pt-8 2xl:px-21">
+      <div className="bg-gradient-header 3xl:pl-[1.667vw] 3xl:p-[.625vw] flex items-center justify-between gap-4 rounded-full bg-slate-950 p-3 pl-4 md:gap-8 md:pl-8 xl:grid xl:grid-cols-[1fr_auto_1fr]">
         <Logo />
 
         <MenuToggleButton

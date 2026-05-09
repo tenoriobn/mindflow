@@ -34,7 +34,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
           />
         </div>
 
-        <ul className="flex items-center justify-center gap-4 max-xl:flex-col md:gap-8">
+        <ul className="3xl:gap-[1.667vw] flex items-center justify-center gap-4 max-xl:flex-col md:gap-8">
           {MENU_LINKS.map(({ label, href }) => {
             const isActive = activeHref === href;
 
@@ -44,7 +44,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
                   href={href}
                   aria-current={isActive ? 'page' : undefined}
                   onClick={() => setIsMenuActive(false)}
-                  className={`transition-default 3xl:text-[1.75rem] inline-block text-xl ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
+                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
                 >
                   {label}
                 </Link>

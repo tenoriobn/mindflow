@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <Header />
 
-      <main className="px-4 md:px-8 2xl:px-21">
+      <main className="3xl:px-[3.2813vw] px-4 md:px-8 2xl:px-21">
         <HeroSection />
       </main>
 

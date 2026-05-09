@@ -8,7 +8,7 @@ const PartnerLogoCarousel = () => {
   const { trackRef, handleMouseEnter, handleMouseLeave } = useMotionTicker(40);
 
   return (
-    <div className="bg-gradient-carousel w-full rounded-r-[1.25rem] rounded-bl-[1.25rem] bg-slate-950 p-4 md:rounded-r-[2.5rem] md:rounded-bl-[2.5rem] md:p-8">
+    <div className="bg-gradient-carousel 3xl:p-[1.667vw] 3xl:rounded-r-[2.083vw] 3xl:rounded-bl-[2.083vw] w-full rounded-r-[1.25rem] rounded-bl-[1.25rem] bg-slate-950 p-4 md:rounded-r-[2.5rem] md:rounded-bl-[2.5rem] md:p-8">
       <div
         className="overflow-hidden"
         style={{
@@ -22,12 +22,12 @@ const PartnerLogoCarousel = () => {
       >
         <div
           ref={trackRef}
-          className="3xl:gap-16 flex w-max items-center gap-4 md:gap-8"
+          className="3xl:gap-[3.334vw] flex w-max items-center gap-4 md:gap-8"
           style={{ willChange: 'transform', transform: 'translateZ(0)' }}
         >
           {duplicatedLogos.map(({ name, Logo }, index) => (
             <div key={`${name}-${index}`} className="flex shrink-0 items-center justify-center">
-              <Logo className="3xl:h-12 h-10 w-auto" aria-label={name} />
+              <Logo className="3xl:h-[2.5vw] h-10 w-auto" aria-label={name} />
             </div>
           ))}
         </div>
