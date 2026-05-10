@@ -3,13 +3,9 @@ import LogoIcon from 'public/icons/logo.svg';
 
 const Logo = () => {
   return (
-    <Link
-      className="3xl:w-48.75 3xl:h-8.5 h-5.75 w-30.75"
-      href="/"
-      aria-label="Mindflow, voltar para a página inicial"
-    >
+    <Link className="3xl:w-[10.157vw] w-30.75" href="/">
       <LogoIcon aria-hidden="true" focusable="false" />
-      <span className="sr-only">Mindflow</span>
+      <span className="sr-only">Mindflow — voltar para a página inicial</span>
     </Link>
   );
 };

@@ -11,8 +11,9 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
 
   return (
     <>
-      <div
-        aria-hidden="true"
+      <button
+        type="button"
+        tabIndex={-1}
         onClick={() => setIsMenuActive(false)}
         className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity xl:hidden ${isMenuActive ? 'visible opacity-100' : 'invisible opacity-0'} `}
       />
@@ -28,13 +29,12 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
           <MenuToggleButton
             icon={CloseIcon}
             aria-label="Fechar menu de navegação"
-            aria-controls="primary-navigation"
             aria-expanded={isMenuActive}
             onClick={() => setIsMenuActive(false)}
           />
         </div>
 
-        <ul className="flex items-center justify-center gap-4 max-xl:flex-col md:gap-8">
+        <ul className="3xl:gap-[1.667vw] flex items-center justify-center gap-4 max-xl:flex-col md:gap-8">
           {MENU_LINKS.map(({ label, href }) => {
             const isActive = activeHref === href;
 
@@ -44,7 +44,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
                   href={href}
                   aria-current={isActive ? 'page' : undefined}
                   onClick={() => setIsMenuActive(false)}
-                  className={`transition-default 3xl:text-[1.75rem] inline-block text-xl ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
+                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
                 >
                   {label}
                 </Link>
@@ -53,9 +53,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
           })}
         </ul>
 
-        <CTAButton aria-label="Começar agora" className="self-end justify-self-center xl:hidden">
-          Começar agora
-        </CTAButton>
+        <CTAButton className="self-end justify-self-center xl:hidden">Começar agora</CTAButton>
       </nav>
     </>
   );

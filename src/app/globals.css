@@ -27,6 +27,13 @@
       rgba(29, 30, 44, 0) 57%
     );
 
+  --background-image-gradient-carousel: linear-gradient(
+    85deg,
+    rgba(29, 30, 44, 1) 22%,
+    rgba(124, 116, 218, 0.25) 50%,
+    rgba(124, 116, 218, 0) 69%
+  );
+
   --background-image-gradient-accordion: linear-gradient(
     90deg,
     rgba(29, 30, 44, 1) 0%,
@@ -60,8 +67,40 @@
 }
 
 @layer base {
-  button {
-    @apply cursor-pointer;
+  body {
+    @apply font-light;
+
+    button {
+      @apply cursor-pointer;
+    }
+
+    &::-webkit-scrollbar {
+      width: 10px;
+      transition: all 3s ease-in-out;
+
+      @media (min-width: 1992px) {
+        width: 0.56vw;
+      }
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #9c9ca7;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #1d1e2c;
+      border-radius: 0.25rem;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #1d1e2cda;
+    }
+
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #1d1e2c #9c9ca7;
+    }
   }
 }
 
