@@ -1,45 +1,90 @@
 .media-default-skin--video {
   border: none !important;
-}
 
-.media-default-skin--video:after {
-  border-radius: none !important;
-  box-shadow: none !important;
-}
+  video {
+    object-fit: cover !important;
+  }
 
-.media-default-skin video {
-  object-fit: cover !important;
-}
+  .media-controls {
+    border-radius: 1.25rem !important;
+  }
 
-.media-default-skin:focus-visible {
-  outline-color: transp !important;
-}
+  .media-button--seek,
+  .media-button--playback-rate,
+  .media-button--pip {
+    display: none !important;
+  }
 
-.media-default-skin .media-controls {
-  border-radius: 1.25rem !important;
+  &:after {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  &:focus-visible {
+    outline-color: transparent !important;
+  }
+
+  @media (width >= 23.4375rem) {
+    .media-controls .media-button-group:first-child,
+    .media-controls .media-button-group:last-child {
+      flex: none !important;
+    }
+
+    .media-controls .media-time-controls {
+      flex: auto !important;
+      order: 0 !important;
+    }
+  }
 
   @media (width >= 48rem) {
-    bottom: 1.5rem !important;
-    inset-inline: 1.5rem !important;
-  }
-
-  @media (width >= 64rem) {
-    bottom: 1.5rem !important;
-    inset-inline: 1.5rem !important;
+    .media-controls {
+      inset-inline: 1.75rem !important;
+      bottom: 1.75rem !important;
+    }
   }
 
   @media (width >= 120rem) {
-    bottom: 0.938vw !important;
-    inset-inline: 0.938vw !important;
-    border-radius: 999vw !important;
-  }
-}
-.media-default-skin .media-slider[data-orientation='horizontal'] {
-  @media (width >= 120rem) {
-    height: 1.667vw;
+    * {
+      font-size: 0.834vw !important;
+    }
 
-    .media-slider__track {
-      height: 0.209vw;
+    .media-controls {
+      bottom: 0.938vw !important;
+      inset-inline: 0.938vw !important;
+      border-radius: 999vw !important;
+      padding: 0.21vw !important;
+    }
+
+    .media-time-controls {
+      gap: 0.625vw !important;
+      padding-inline: 0.525vw !important;
+    }
+
+    .media-button-group {
+      gap: 0.105vw !important;
+    }
+
+    .media-button--icon {
+      width: 1.875vw !important;
+    }
+
+    .media-slider[data-orientation='horizontal'] {
+      height: 1.667vw;
+
+      .media-slider__track {
+        height: 0.209vw;
+      }
+    }
+
+    .media-slider__thumb {
+      width: 0.521vw !important;
+      height: 0.521vw !important;
+      opacity: 1 !important;
+    }
+
+    .media-button svg {
+      width: 0.938vw !important;
+      height: 0.938vw !important;
     }
   }
 }

@@ -3,12 +3,28 @@ import '@videojs/react/video/skin.css';
 import { createPlayer, videoFeatures } from '@videojs/react';
 import { VideoSkin, Video } from '@videojs/react/video';
 import './about-method-video-player.css';
+import { useEffect } from 'react';
 
 const Player = createPlayer({
   features: videoFeatures,
 });
 
 const AboutMethodVideoPlayer = () => {
+  useEffect(() => {
+    const icons = document.querySelectorAll('.media-icon');
+
+    icons.forEach((icon) => {
+      if (!icon.getAttribute('viewBox')) {
+        const width = icon.getAttribute('width');
+        const height = icon.getAttribute('height');
+
+        if (width && height) {
+          icon.setAttribute('viewBox', `0 0 ${width} ${height}`);
+        }
+      }
+    });
+  }, []);
+
   return (
     <Player.Provider>
       <figure className="contents">

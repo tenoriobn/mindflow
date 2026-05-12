@@ -35,8 +35,8 @@
   );
 
   --background-image-gradient-about: linear-gradient(
-    145deg,
-    rgba(29, 30, 44, 1) 72%,
+    150deg,
+    rgba(29, 30, 44, 1) 80%,
     rgba(124, 116, 218, 0.25) 99%,
     rgba(124, 116, 218, 0) 100%
   );
