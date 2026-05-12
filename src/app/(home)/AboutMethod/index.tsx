@@ -18,7 +18,10 @@ const AboutMethod = () => {
         O que é o Método MindFlow?
       </SectionTitle>
 
-      <SectionDescription className="3xl:max-w-[70vw] mx-auto text-center text-white/90 md:max-w-131.5 lg:max-w-181 xl:max-w-240.5">
+      <SectionDescription
+        id="about-method-description"
+        className="3xl:max-w-[70vw] mx-auto text-center text-white/90 md:max-w-131.5 lg:max-w-181 xl:max-w-240.5"
+      >
         Sistema de organização mental que une neurociência e ferramentas digitais simples. Em 4
         módulos, o aluno aprende a estruturar uma rotina leve, entender sua mente e usar tecnologia
         de forma estratégica.
