@@ -60,16 +60,12 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section
-      id="beneficios"
-      aria-labelledby="benefits-title"
-      className="3xl:pt-[1.667vw] pt-4 md:pt-8"
-    >
+    <section id="beneficios" aria-labelledby="benefits-title" className="flex min-h-dvh flex-col">
       <SectionTitle id="benefits-title" className="text-slate-950">
         O que você vai conquistar
       </SectionTitle>
 
-      <ul className="grid max-md:gap-4 md:max-lg:gap-8 lg:grid-cols-2">
+      <ul className="grid flex-1 max-md:gap-4 md:max-lg:gap-8 lg:grid-cols-2">
         {benefits.map((benefit) => {
           const isImageCard = benefit.variant === 'image';
 
@@ -82,7 +78,9 @@ const Benefits = () => {
             >
               <article
                 className={
-                  isImageCard ? `${framedArticleContentBase} ${benefit.articleClass}` : undefined
+                  isImageCard
+                    ? `${framedArticleContentBase} ${benefit.articleClass}`
+                    : '3xl:gap-[1.667vw] flex flex-col gap-4 md:gap-8'
                 }
               >
                 {isImageCard ? (
