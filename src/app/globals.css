@@ -3,6 +3,7 @@
 @theme inline {
   --color-slate-950: #1d1e2c;
   --color-slate-300: #cdcddd;
+  --color-slate-200: #dbdce0;
 
   --background-image-gradient-header: linear-gradient(
     87deg,
@@ -77,6 +78,8 @@
   --breakpoint-xs: 23.4375rem;
   --breakpoint-2xl: 90rem;
   --breakpoint-3xl: 120rem;
+
+  --infinite-carousel-duration: 40s;
 }
 
 @layer base {
