@@ -43,7 +43,7 @@ const Testimonials = () => {
                           height={80}
                           src={avatar}
                           alt={`Foto de perfil de ${name}`}
-                          className="3xl:w-[4.271vw] 3xl:h-[4.271vw] h-16 w-16 rounded-full md:h-20 md:w-20"
+                          className="3xl:w-[4.271vw] 3xl:h-[4.271vw] h-16 w-16 rounded-full object-cover md:h-20 md:w-20"
                         />
 
                         <div className="3xl:gap-[.0105vw] flex flex-col gap-0.5">

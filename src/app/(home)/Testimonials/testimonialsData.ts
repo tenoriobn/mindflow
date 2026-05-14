@@ -7,7 +7,7 @@ export const testimonialsData: Testimonial[] = [
       'O MindFlow me trouxe uma paz mental que eu nunca tinha sentido antes. Em apenas duas semanas já percebi diferença no meu sono.',
     name: 'Marina Costa',
     handle: '@mariicosta',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/mariicosta.avif',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const testimonialsData: Testimonial[] = [
       'Nunca acreditei que conseguiria meditar por mais de 5 minutos. Hoje faço 30 minutos diários com facilidade. Transformou minha rotina.',
     name: 'Rafael Souza',
     handle: '@rafasouza',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/rafasouza.avif',
   },
   {
     id: 3,
@@ -23,7 +23,7 @@ export const testimonialsData: Testimonial[] = [
       'A ansiedade que me travava no trabalho diminuiu muito. As sessões guiadas são incríveis.',
     name: 'Camila Reis',
     handle: '@camilareis',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/camilareis.avif',
   },
   {
     id: 4,
@@ -31,7 +31,7 @@ export const testimonialsData: Testimonial[] = [
       'Recomendo para qualquer pessoa que quer começar a cuidar da saúde mental. É simples, bonito e realmente funciona.',
     name: 'Lucas Mendes',
     handle: '@lucasmendes',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/lucasmendes.avif',
   },
   {
     id: 5,
@@ -39,7 +39,7 @@ export const testimonialsData: Testimonial[] = [
       'Uso o MindFlow há 3 meses e a melhora na minha concentração foi notável. Minha produtividade no trabalho subiu muito.',
     name: 'Fernanda Alves',
     handle: '@feralves',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/feralves.avif',
   },
   {
     id: 6,
@@ -47,7 +47,7 @@ export const testimonialsData: Testimonial[] = [
       'Finalmente um app de meditação que prende. O design é lindo e as trilhas sonoras são perfeitas.',
     name: 'Thiago Lima',
     handle: '@thilima',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/thilima.avif',
   },
   {
     id: 7,
@@ -55,14 +55,14 @@ export const testimonialsData: Testimonial[] = [
       'Minha terapeuta indicou o MindFlow como complemento às sessões. A combinação tem sido extraordinária para o meu processo.',
     name: 'Juliana Martins',
     handle: '@jumartins',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/jumartins.avif',
   },
   {
     id: 8,
     quote: 'Cinco estrelas. Simples assim. Mudou a forma como eu encaro o dia a dia.',
     name: 'Pedro Carvalho',
     handle: '@pedrocarv',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/pedrocarv.avif',
   },
   {
     id: 9,
@@ -70,6 +70,6 @@ export const testimonialsData: Testimonial[] = [
       'Comecei pessimista, achando que não era pra mim. Hoje mal consigo imaginar minha manhã sem o MindFlow. Que surpresa boa.',
     name: 'Amanda Ferreira',
     handle: '@amandaferr',
-    avatar: '/images/avatar-testimonials.png',
+    avatar: '/images/avatar/amandaferr.avif',
   },
 ];
