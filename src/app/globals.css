@@ -69,11 +69,11 @@
     rgba(29, 30, 44, 1) 100%
   ); */
 
-  --background-image-gradient-button-whatsapp: linear-gradient(
+  /* --background-image-gradient-button-whatsapp: linear-gradient(
     90deg,
     rgba(29, 30, 44, 1) 0%,
     rgba(74, 176, 81, 0.85) 100%
-  );
+  ); */
 
   --breakpoint-xs: 23.4375rem;
   --breakpoint-2xl: 90rem;

@@ -9,7 +9,7 @@ const BonusCTA = () => {
     <section
       id="bonus-cta"
       aria-labelledby="bonus-cta-title"
-      className="bg-gradient-header 3xl:p-[1.667vw] 3xl:rounded-[2.083vw] 3xl:gap-[1.667vw] 3xl:rounded-bl-none flex min-h-dvh gap-4 rounded-[1.25rem] rounded-br-none bg-slate-950 p-4 max-xl:flex-col md:gap-8 md:rounded-[2.5rem] md:p-8 md:max-xl:rounded-br-none lg:grid lg:grid-cols-2 lg:items-center xl:rounded-bl-none"
+      className="bonus-wrapper 3xl:p-[1.667vw] 3xl:gap-[1.667vw] flex min-h-dvh gap-4 p-4 max-xl:flex-col md:gap-8 md:p-8 lg:grid lg:grid-cols-2 lg:items-center"
     >
       <div className="flex flex-col lg:order-2">
         <SectionTitle

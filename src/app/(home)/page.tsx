@@ -1,6 +1,7 @@
 import AboutMethod from './AboutMethod';
 import Benefits from './Benefits';
 import BonusCTA from './BonusCTA';
+import FAQ from './FAQ';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import Testimonials from './Testimonials';
@@ -15,7 +16,10 @@ export default function Home() {
         <AboutMethod />
         <Benefits />
         <Testimonials />
-        <BonusCTA />
+        <div className="bg-gradient-header 3xl:rounded-t-[2.083vw] overflow-hidden rounded-t-[1.25rem] bg-slate-950 md:rounded-t-[2.5rem]">
+          <BonusCTA />
+          <FAQ />
+        </div>
       </main>
 
       <footer className="bg-green-500">
