@@ -1,0 +1,25 @@
+.partner-mask {
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.partner-track {
+  width: max-content;
+  will-change: transform;
+  animation: partner-carousel var(--infinite-carousel-duration) linear infinite;
+}
+
+.partner-mask:hover .partner-track {
+  animation-play-state: paused;
+}
+
+@keyframes partner-carousel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}

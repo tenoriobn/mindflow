@@ -1,0 +1,37 @@
+.testimonials-mask {
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.testimonials-mask:hover ul {
+  animation-play-state: paused;
+}
+
+.animate-testimonials {
+  animation: testimonials var(--infinite-carousel-duration) linear infinite;
+}
+
+.animate-testimonials-reverse {
+  animation: testimonials-reverse var(--infinite-carousel-duration) linear infinite;
+}
+
+@keyframes testimonials {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes testimonials-reverse {
+  from {
+    transform: translateY(-50%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
