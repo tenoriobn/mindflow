@@ -1,5 +1,6 @@
 import AboutMethod from './AboutMethod';
 import Benefits from './Benefits';
+import BonusCTA from './BonusCTA';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import Testimonials from './Testimonials';
@@ -14,6 +15,7 @@ export default function Home() {
         <AboutMethod />
         <Benefits />
         <Testimonials />
+        <BonusCTA />
       </main>
 
       <footer className="bg-green-500">
