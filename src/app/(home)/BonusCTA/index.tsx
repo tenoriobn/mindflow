@@ -9,7 +9,7 @@ const BonusCTA = () => {
     <section
       id="bonus-cta"
       aria-labelledby="bonus-cta-title"
-      className="bonus-wrapper 3xl:p-[1.667vw] 3xl:gap-[1.667vw] flex min-h-dvh gap-4 p-4 max-xl:flex-col md:gap-8 md:p-8 lg:grid lg:grid-cols-2 lg:items-center"
+      className="bonus-wrapper inverted-radius 3xl:p-[1.667vw] 3xl:gap-[1.667vw] flex min-h-dvh gap-4 p-4 max-xl:flex-col md:gap-8 md:p-8 lg:grid lg:grid-cols-2 lg:items-center"
     >
       <div className="flex flex-col lg:order-2">
         <SectionTitle
@@ -30,7 +30,7 @@ const BonusCTA = () => {
         <button
           type="button"
           aria-describedby="bonus-cta-description"
-          className="bg-gradient-button-secondary 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 active:scale-90 max-lg:self-center md:max-w-max md:px-16"
+          className="bg-gradient-button bg-gradient-button-secondary 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 active:scale-90 max-lg:self-center md:max-w-max md:px-16"
         >
           <DiamondIcon
             aria-hidden="true"

@@ -1,93 +1,30 @@
 .bg-gradient-button-secondary {
-  background-color: rgba(113, 83, 41, 1);
+  --button-bg-base: rgba(113, 83, 41, 1);
 
-  background-image:
-    radial-gradient(at 0% 0%, rgba(113, 83, 41, 1) 0, transparent 50%),
-    radial-gradient(at 50% 0%, rgba(163, 115, 39, 1) 0, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(113, 83, 41, 1) 0, transparent 50%),
-    radial-gradient(at 50% 100%, rgba(29, 30, 44, 1) 0, transparent 50%);
+  --button-bg-hover: rgba(163, 115, 39, 1);
 
-  background-size: 200% 200%;
-  background-position: 0% 0%;
+  --button-bg-active: rgba(113, 83, 41, 1);
 
-  animation: mesh-flow-secondary 8s ease-in-out infinite alternate;
+  --button-gradient-1: rgba(113, 83, 41, 1);
 
-  transition:
-    scale 0.3s ease,
-    background-size 0.8s ease,
-    background-color 0.8s ease,
-    filter 0.8s ease;
+  --button-gradient-2: rgba(163, 115, 39, 1);
 
-  &:hover {
-    background-color: rgba(163, 115, 39, 1);
+  --button-gradient-3: rgba(113, 83, 41, 1);
 
-    background-image:
-      radial-gradient(at 0% 0%, rgba(113, 83, 41, 1) 0, transparent 50%),
-      radial-gradient(at 50% 0%, rgba(163, 115, 39, 1) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(113, 83, 41, 1) 0, transparent 50%);
-
-    background-size: 300% 300%;
-    filter: saturate(1.1) brightness(1.05);
-  }
-
-  &:active {
-    background-color: rgba(113, 83, 41, 1);
-    background-size: 300% 300%;
-    filter: saturate(1.1) brightness(1.05);
-  }
-}
-
-@keyframes mesh-flow-secondary {
-  0% {
-    background-position: 0% 0%;
-  }
-
-  33% {
-    background-position: 100% 30%;
-  }
-
-  66% {
-    background-position: 20% 100%;
-  }
-
-  100% {
-    background-position: 80% 50%;
-  }
+  --button-gradient-4: rgba(29, 30, 44, 1);
 }
 
 .bonus-wrapper {
-  position: relative;
-}
+  --inverted-size: 0rem;
+  --inverted-radius: 0rem;
 
-.bonus-wrapper::after {
-  content: '';
-
-  position: absolute;
-
-  right: 0;
-  bottom: 0;
-
-  pointer-events: none;
-}
-
-@media (min-width: 1024px) {
-  .bonus-wrapper::after {
-    width: 6rem;
-    height: 6rem;
-
-    border-bottom-right-radius: 2.5rem;
-
-    box-shadow: 2.5rem 2.5rem 0 2.5rem #cdcddd;
+  @media (min-width: 1024px) {
+    --inverted-size: 6rem;
+    --inverted-radius: 2.5rem;
   }
-}
 
-@media (min-width: 1920px) {
-  .bonus-wrapper::after {
-    width: 4.167vw;
-    height: 4.167vw;
-
-    border-bottom-right-radius: 2.083vw;
-
-    box-shadow: 2.083vw 2.083vw 0 2.083vw #cdcddd;
+  @media (min-width: 1920px) {
+    --inverted-size-3xl: 4.167vw;
+    --inverted-radius-3xl: 2.083vw;
   }
 }
