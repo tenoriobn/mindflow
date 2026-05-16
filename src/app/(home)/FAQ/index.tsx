@@ -2,6 +2,7 @@ import SectionDescription from 'src/components/SectionDescription';
 import SectionTitle from 'src/components/SectionTitle';
 import WhatsappIcon from 'public/icons/whatsapp.svg';
 import './faq.css';
+import FAQAccordion from './FAQAccordion';
 
 const FAQ = () => {
   return (
@@ -40,7 +41,7 @@ const FAQ = () => {
       </div>
 
       <div className="flex h-full w-full flex-1 pl-4 md:pl-8 lg:pl-0">
-        <div className="3xl:p-[1.667vw] 3xl:rounded-tl-[2.083vw] flex-1 rounded-tl-[1.25rem] bg-slate-300 p-4 md:rounded-tl-[2.5rem] md:p-8" />
+        <FAQAccordion />
       </div>
     </section>
   );
