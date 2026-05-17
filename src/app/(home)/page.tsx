@@ -3,6 +3,7 @@ import Benefits from './Benefits';
 import BonusCTA from './BonusCTA';
 import BrandSignature from './BrandSignature';
 import FAQ from './FAQ';
+import Footer from './Footer';
 import Header from './Header';
 import HeroSection from './HeroSection';
 import Testimonials from './Testimonials';
@@ -24,9 +25,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="bg-green-500">
-        <h3>Footer</h3>
-      </footer>
+      <Footer />
     </>
   );
 }
