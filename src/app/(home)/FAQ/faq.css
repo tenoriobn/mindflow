@@ -1,0 +1,30 @@
+.bg-gradient-button-whatsapp {
+  --button-bg-base: rgb(31, 54, 29);
+
+  --button-bg-hover: rgb(10, 146, 19);
+
+  --button-bg-active: rgb(25, 94, 25);
+
+  --button-gradient-1: rgb(34, 143, 41);
+
+  --button-gradient-2: rgb(10, 146, 19);
+
+  --button-gradient-3: rgb(39, 126, 36);
+
+  --button-gradient-4: rgb(48, 150, 48);
+}
+
+.faq-wrapper {
+  --inverted-size: 4rem;
+  --inverted-radius: 1.25rem;
+
+  @media (min-width: 768px) {
+    --inverted-size: 6rem;
+    --inverted-radius: 2.5rem;
+  }
+
+  @media (min-width: 1920px) {
+    --inverted-size-3xl: 4.167vw;
+    --inverted-radius-3xl: 2.083vw;
+  }
+}

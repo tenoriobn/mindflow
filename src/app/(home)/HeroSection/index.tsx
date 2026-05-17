@@ -25,7 +25,7 @@ const HeroSection = () => {
 
           <button
             type="button"
-            className="bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
+            className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
           >
             Entrar na Lista VIP
           </button>

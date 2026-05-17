@@ -61,19 +61,19 @@
     rgba(205, 205, 221, 1) 100%
   );
 
-  --background-image-gradient-button-secondary: linear-gradient(
+  /* --background-image-gradient-button-secondary: linear-gradient(
     90deg,
     rgba(113, 83, 41, 1) 29%,
     rgba(163, 115, 39, 1) 53%,
     rgba(113, 83, 41, 1) 80%,
     rgba(29, 30, 44, 1) 100%
-  );
+  ); */
 
-  --background-image-gradient-button-whatsapp: linear-gradient(
+  /* --background-image-gradient-button-whatsapp: linear-gradient(
     90deg,
     rgba(29, 30, 44, 1) 0%,
     rgba(74, 176, 81, 0.85) 100%
-  );
+  ); */
 
   --breakpoint-xs: 23.4375rem;
   --breakpoint-2xl: 90rem;
@@ -123,5 +123,95 @@
 @layer utilities {
   .transition-default {
     @apply transition duration-300 ease-in-out;
+  }
+
+  .bg-gradient-button {
+    background-color: var(--button-bg-base);
+
+    background-image:
+      radial-gradient(at 0% 0%, var(--button-gradient-1) 0, transparent 50%),
+      radial-gradient(at 50% 0%, var(--button-gradient-2) 0, transparent 50%),
+      radial-gradient(at 100% 0%, var(--button-gradient-3) 0, transparent 50%),
+      radial-gradient(at 50% 100%, var(--button-gradient-4) 0, transparent 50%);
+
+    background-size: 200% 200%;
+    background-position: 0% 0%;
+
+    animation: mesh-flow 8s ease-in-out infinite alternate;
+
+    transition:
+      scale 0.3s ease,
+      background-size 0.8s ease,
+      background-color 0.8s ease,
+      filter 0.8s ease;
+  }
+
+  .bg-gradient-button:hover {
+    background-color: var(--button-bg-hover);
+
+    background-size: 300% 300%;
+
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  .bg-gradient-button:active {
+    background-color: var(--button-bg-active);
+
+    background-size: 300% 300%;
+
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  @keyframes mesh-flow {
+    0% {
+      background-position: 0% 0%;
+    }
+
+    33% {
+      background-position: 100% 30%;
+    }
+
+    66% {
+      background-position: 20% 100%;
+    }
+
+    100% {
+      background-position: 80% 50%;
+    }
+  }
+
+  .inverted-radius {
+    position: relative;
+  }
+
+  .inverted-radius::after {
+    content: '';
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: var(--inverted-size, 4rem);
+    height: var(--inverted-size, 4rem);
+
+    border-bottom-right-radius: var(--inverted-radius, 1.25rem);
+
+    box-shadow: var(--inverted-radius, 1.25rem) var(--inverted-radius, 1.25rem) 0
+      var(--inverted-radius, 1.25rem) var(--color-slate-300);
+
+    pointer-events: none;
+  }
+
+  @media (min-width: 1920px) {
+    .inverted-radius::after {
+      width: var(--inverted-size-3xl, 4.167vw);
+      height: var(--inverted-size-3xl, 4.167vw);
+
+      border-bottom-right-radius: var(--inverted-radius-3xl, 2.083vw);
+
+      box-shadow: var(--inverted-radius-3xl, 2.083vw) var(--inverted-radius-3xl, 2.083vw) 0
+        var(--inverted-radius-3xl, 2.083vw) var(--color-slate-300);
+    }
   }
 }

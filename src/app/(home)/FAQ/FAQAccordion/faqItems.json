@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "O curso é ao vivo ou gravado?",
+    "description": "O Método MindFlow possui aulas gravadas para que você possa assistir no seu próprio ritmo, além de encontros ao vivo exclusivos para aprofundamento, dúvidas e aplicação prática dos conteúdos."
+  },
+  {
+    "id": 2,
+    "title": "Quando o treinamento será liberado?",
+    "description": "O lançamento oficial acontecerá em dezembro. Participantes da lista VIP receberão acesso antecipado, novidades exclusivas e condições especiais antes da abertura pública."
+  },
+  {
+    "id": 3,
+    "title": "Quanto tempo preciso dedicar por semana?",
+    "description": "O MindFlow foi pensado para se adaptar à sua rotina. Com poucos minutos por dia, você já consegue aplicar os conceitos e perceber mudanças práticas na sua clareza mental e produtividade."
+  },
+  {
+    "id": 4,
+    "title": "O método serve para qualquer profissão?",
+    "description": "Sim. O conteúdo foi criado especialmente para profissionais autônomos, criativos, empreendedores e pessoas que desejam organizar melhor sua mente e rotina, independentemente da área em que atuam."
+  },
+  {
+    "id": 5,
+    "title": "Vou receber materiais de apoio?",
+    "description": "Sim. Além das aulas, você terá acesso a materiais complementares, exercícios práticos, templates organizacionais e conteúdos exclusivos para facilitar a aplicação do método no dia a dia."
+  },
+  {
+    "id": 6,
+    "title": "Por quanto tempo terei acesso ao conteúdo?",
+    "description": "Após a inscrição, você terá acesso ao conteúdo por tempo estendido, permitindo revisitar as aulas sempre que quiser e aplicar os ensinamentos no seu próprio ritmo."
+  }
+]

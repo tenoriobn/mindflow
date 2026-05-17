@@ -1,0 +1,30 @@
+.bg-gradient-button-secondary {
+  --button-bg-base: rgba(113, 83, 41, 1);
+
+  --button-bg-hover: rgba(163, 115, 39, 1);
+
+  --button-bg-active: rgba(113, 83, 41, 1);
+
+  --button-gradient-1: rgba(113, 83, 41, 1);
+
+  --button-gradient-2: rgba(163, 115, 39, 1);
+
+  --button-gradient-3: rgba(113, 83, 41, 1);
+
+  --button-gradient-4: rgba(29, 30, 44, 1);
+}
+
+.bonus-wrapper {
+  --inverted-size: 0rem;
+  --inverted-radius: 0rem;
+
+  @media (min-width: 1024px) {
+    --inverted-size: 6rem;
+    --inverted-radius: 2.5rem;
+  }
+
+  @media (min-width: 1920px) {
+    --inverted-size-3xl: 4.167vw;
+    --inverted-radius-3xl: 2.083vw;
+  }
+}
