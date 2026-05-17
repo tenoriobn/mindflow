@@ -10,7 +10,7 @@ const FAQ = () => {
     <section
       id="bonus-cta"
       aria-labelledby="bonus-cta-title"
-      className="flex min-h-dvh max-xl:flex-col lg:grid lg:grid-cols-2 lg:items-center"
+      className="flex min-h-dvh overflow-hidden max-xl:flex-col lg:grid lg:grid-cols-2 lg:items-center"
     >
       <header className="faq-wrapper inverted-radius 3xl:p-[1.667vw] flex h-full flex-col justify-center p-4 md:p-8">
         <SectionTitle
