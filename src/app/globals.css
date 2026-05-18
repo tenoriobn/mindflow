@@ -61,20 +61,6 @@
     rgba(205, 205, 221, 1) 100%
   );
 
-  /* --background-image-gradient-button-secondary: linear-gradient(
-    90deg,
-    rgba(113, 83, 41, 1) 29%,
-    rgba(163, 115, 39, 1) 53%,
-    rgba(113, 83, 41, 1) 80%,
-    rgba(29, 30, 44, 1) 100%
-  ); */
-
-  /* --background-image-gradient-button-whatsapp: linear-gradient(
-    90deg,
-    rgba(29, 30, 44, 1) 0%,
-    rgba(74, 176, 81, 0.85) 100%
-  ); */
-
   --breakpoint-xs: 23.4375rem;
   --breakpoint-2xl: 90rem;
   --breakpoint-3xl: 120rem;
@@ -212,6 +198,27 @@
 
       box-shadow: var(--inverted-radius-3xl, 2.083vw) var(--inverted-radius-3xl, 2.083vw) 0
         var(--inverted-radius-3xl, 2.083vw) var(--color-slate-300);
+    }
+  }
+
+  .bg-gradient-text-animated {
+    background-image: var(--background-image-gradient-text);
+
+    background-size: 100% 140%;
+    background-position: top 100%;
+
+    animation: brand-glow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes brand-glow {
+    0% {
+      background-position: top 100%;
+      filter: brightness(1);
+    }
+
+    100% {
+      background-position: center 60%;
+      filter: brightness(1.08);
     }
   }
 }
