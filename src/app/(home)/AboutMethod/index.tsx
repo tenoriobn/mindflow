@@ -12,7 +12,7 @@ const AboutMethod = () => {
     <section
       id="sobre-metodo"
       aria-labelledby="about-method-title"
-      className="3xl:p-[1.667vw] 3xl:rounded-[2.083vw] bg-gradient-about flex min-h-dvh flex-col rounded-[1.25rem] bg-slate-950 p-4 md:rounded-[2.5rem] md:p-8"
+      className="3xl:p-[1.667vw] 3xl:rounded-[2.083vw] bg-gradient-about flex min-h-svh flex-col rounded-[1.25rem] bg-slate-950 p-4 md:rounded-[2.5rem] md:p-8"
     >
       <SectionTitle id="about-method-title" className="text-white/95">
         O que é o Método MindFlow?

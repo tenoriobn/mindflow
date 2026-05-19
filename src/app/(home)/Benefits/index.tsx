@@ -60,7 +60,7 @@ const benefits = [
 
 const Benefits = () => {
   return (
-    <section id="beneficios" aria-labelledby="benefits-title" className="flex min-h-dvh flex-col">
+    <section id="beneficios" aria-labelledby="benefits-title" className="flex min-h-svh flex-col">
       <SectionTitle id="benefits-title" className="text-slate-950">
         O que você vai conquistar
       </SectionTitle>
