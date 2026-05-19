@@ -8,7 +8,7 @@ const Testimonials = () => {
     <section
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="flex min-h-dvh flex-col overflow-hidden max-md:max-h-152 md:max-h-dvh"
+      className="flex min-h-svh flex-col overflow-hidden max-md:max-h-152 md:max-h-svh"
     >
       <SectionTitle id="testimonials-title" className="text-slate-950">
         O que nossos alunos dizem

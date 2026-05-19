@@ -9,7 +9,7 @@ const BonusCTA = () => {
     <section
       id="bonus-cta"
       aria-labelledby="bonus-cta-title"
-      className="bonus-wrapper inverted-radius 3xl:p-[1.667vw] 3xl:gap-[1.667vw] flex min-h-dvh gap-4 p-4 max-xl:flex-col md:gap-8 md:p-8 lg:grid lg:grid-cols-2 lg:items-center"
+      className="bonus-wrapper inverted-radius 3xl:p-[1.667vw] 3xl:gap-[1.667vw] flex min-h-svh gap-4 p-4 max-xl:flex-col md:gap-8 md:p-8 lg:grid lg:grid-cols-2 lg:items-center"
     >
       <div className="flex flex-col lg:order-2">
         <SectionTitle
