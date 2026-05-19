@@ -25,7 +25,7 @@ const benefits = [
     description:
       'Treine sua mente para trabalhar com clareza, eliminando ruídos e direcionando atenção para o essencial.',
     variant: 'image',
-    image: '/images/focus-card.png',
+    image: '/images/focus-card.webp',
     articleClass:
       '3xl:rounded-br-[2.083vw] 3xl:pr-[1.667vw] 3xl:pb-[1.667vw] lg:rounded-br-[2.5rem] lg:pr-8 lg:pb-8',
   },
@@ -52,7 +52,7 @@ const benefits = [
     description:
       'Aumente seu desempenho sem sobrecarga, trabalhando com equilíbrio, foco e satisfação.',
     variant: 'image',
-    image: '/images/productivity-card.png',
+    image: '/images/productivity-card.webp',
     articleClass:
       '3xl:rounded-tl-[2.083vw] 3xl:pt-[1.667vw] 3xl:pl-[1.667vw] lg:rounded-tl-[2.5rem] lg:pt-8 lg:pl-8',
   },

@@ -34,7 +34,7 @@ const AboutMethodVideoPlayer = () => {
             playsInline
             preload="metadata"
             className="h-full w-full object-cover"
-            poster="/images/about-method-poster.png"
+            poster="/images/about-method-poster.avif"
             aria-describedby="about-method-description"
           />
         </VideoSkin>

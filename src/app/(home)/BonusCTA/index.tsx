@@ -41,11 +41,19 @@ const BonusCTA = () => {
       </div>
 
       <Image
-        src="/images/vip-list-card.png"
+        src="/images/vip-list-card.webp"
         alt="Mulher sorrindo enquanto usa um tablet em um ambiente confortável"
         width={1440}
         height={1381}
-        className="3xl:rounded-[2.083vw] aspect-3/1 h-full w-full rounded-[1.25rem] object-cover max-xl:flex-1 md:min-h-105 md:rounded-[2.5rem] lg:order-1"
+        quality={90}
+        sizes="
+          (max-width: 768px) 100vw,
+          (max-width: 1280px) 50vw,
+          900px
+        "
+        loading="eager"
+        decoding="async"
+        className="3xl:rounded-[2.083vw] h-full w-full rounded-[1.25rem] object-cover max-xl:flex-1 md:min-h-105 md:rounded-[2.5rem] lg:order-1"
       />
     </section>
   );
