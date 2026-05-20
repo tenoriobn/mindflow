@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  // metadataBase: new URL("https://mindflow.com.br"),
+  metadataBase: new URL('https://mindflowdigital.vercel.app'),
   title: {
     default: 'MindFlow | Clareza mental, foco e produtividade com leveza',
     template: '%s | MindFlow',
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: 'MindFlow',
-      // url: "https://mindflow.com.br",
+      url: 'https://mindflowdigital.vercel.app',
     },
   ],
 
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   classification: 'Bem-estar, produtividade e desenvolvimento pessoal',
 
   alternates: {
-    // canonical: "https://mindflow.com.br",
+    canonical: 'https://mindflowdigital.vercel.app',
   },
 
   robots: {
@@ -70,53 +70,33 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    // url: "https://mindflow.com.br",
+    url: 'https://mindflowdigital.vercel.app',
     siteName: 'MindFlow',
     title: 'MindFlow | Clareza mental, foco e produtividade com leveza',
     description:
       'Transforme sua rotina com mais foco, equilíbrio e clareza mental através do Método MindFlow.',
-    // images: [
-    //   {
-    //     url: "/og-image.jpg",
-    //     width: 1200,
-    //     height: 630,
-    //     alt: "MindFlow — Clareza mental, foco e produtividade com leveza",
-    //   },
-    // ],
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MindFlow — Clareza mental, foco e produtividade com leveza',
+      },
+    ],
   },
 
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title: "MindFlow | Clareza mental, foco e produtividade com leveza",
-  //   description:
-  //     "Descubra uma nova forma de viver com foco, leveza e produtividade real.",
-  //   images: ["/og-image.jpg"],
-  //   creator: "@mindflow",
-  // },
-
-  // icons: {
-  //   icon: [
-  //     { url: "/favicon.ico" },
-  //     { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
-  //     { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
-  //   ],
-  //   apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-  //   shortcut: ["/favicon.ico"],
-  // },
-
-  // manifest: "/site.webmanifest",
-
-  verification: {
-    google: 'SEU_GOOGLE_SITE_VERIFICATION',
-    // yandex: "...",
-    // yahoo: "...",
-    // other: { ... }
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MindFlow | Clareza mental, foco e produtividade com leveza',
+    description: 'Descubra uma nova forma de viver com foco, leveza e produtividade real.',
+    images: ['/images/og-image.jpg'],
+    creator: '@mindflow',
   },
 
-  appleWebApp: {
-    capable: true,
-    title: 'MindFlow',
-    statusBarStyle: 'black-translucent',
+  icons: {
+    icon: [{ url: '/icons/favicon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    shortcut: ['/icons/favicon.svg'],
   },
 
   formatDetection: {
@@ -127,7 +107,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1D1E2C',
+  themeColor: '#cdcddd',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

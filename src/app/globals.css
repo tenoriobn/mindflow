@@ -2,8 +2,8 @@
 
 @theme inline {
   --color-slate-950: #1d1e2c;
-  --color-slate-300: #cdcddd;
   --color-slate-200: #dbdce0;
+  --color-slate-300: #cdcddd;
 
   --background-image-gradient-header: linear-gradient(
     87deg,
