@@ -1,7 +1,8 @@
 'use client';
 import gsap from 'gsap';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-export { gsap, ScrollTrigger };
+export { gsap, ScrollSmoother, ScrollTrigger };

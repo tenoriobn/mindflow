@@ -97,7 +97,7 @@ const HeroSection = () => {
       id="inicio"
       aria-labelledby="hero-section-title"
       ref={sectionRef}
-      className="3xl:pt-[7.913vw] flex min-h-svh w-full flex-col pt-23 md:pt-31 xl:pt-35"
+      className="panel hero-section 3xl:pt-[7.913vw] flex min-h-svh w-full flex-col pt-23 md:pt-31 xl:pt-35"
     >
       <div className="3xl:p-[1.667vw] 3xl:rounded-tl-[2.083vw] 3xl:rounded-r-[2.083vw] relative isolate grid flex-1 items-center overflow-hidden rounded-tl-[1.25rem] rounded-r-[1.25rem] bg-slate-950 p-4 md:rounded-tl-[2.5rem] md:rounded-r-[2.5rem] md:p-8">
         <Image
