@@ -1,3 +1,11 @@
+.hero-image,
+.hero-title-char,
+.hero-description,
+.hero-button,
+.partner-icons {
+  opacity: 0;
+}
+
 .bg-gradient-button-primary {
   --button-bg-base: rgba(99, 75, 26, 1);
 
