@@ -46,7 +46,8 @@ const Footer = () => {
         <hr className="3xl:my-[1.667vw] my-4 h-px w-full border-0 bg-white/12 md:my-8" />
 
         <small className="3xl:text-[1.46vw] text-center text-lg text-white md:text-2xl">
-          © 2026 MindFlow. <br className="md:hidden" /> Todos os direitos reservados
+          © {new Date().getFullYear()} MindFlow. <br className="md:hidden" /> Todos os direitos
+          reservados
         </small>
       </div>
     </footer>
