@@ -28,6 +28,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
 
           <MenuToggleButton
             icon={CloseIcon}
+            iconClassName="w-5 h-3.5 "
             aria-label="Fechar menu de navegação"
             aria-expanded={isMenuActive}
             onClick={() => setIsMenuActive(false)}
