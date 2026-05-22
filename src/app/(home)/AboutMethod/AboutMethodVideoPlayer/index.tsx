@@ -27,7 +27,7 @@ const AboutMethodVideoPlayer = () => {
 
   return (
     <Player.Provider>
-      <figure className="contents">
+      <figure className="about-video contents">
         <VideoSkin className="3xl:rounded-[2.083vw]! aspect-3/1 min-h-70 w-full flex-1 overflow-hidden rounded-[1.25rem]! md:rounded-[2.5rem]!">
           <Video
             src="/video/about-method.mp4"
