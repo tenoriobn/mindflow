@@ -69,8 +69,25 @@
 }
 
 @layer base {
+  * {
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: auto !important;
+  }
+
   body {
     @apply font-light;
+    overscroll-behavior: none;
 
     button {
       @apply cursor-pointer;
@@ -103,6 +120,14 @@
       scrollbar-width: thin;
       scrollbar-color: #1d1e2c #9c9ca7;
     }
+  }
+
+  #smooth-wrapper {
+    overflow: hidden;
+  }
+
+  #smooth-content {
+    will-change: transform;
   }
 }
 
