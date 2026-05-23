@@ -1,11 +1,16 @@
 .testimonials-mask {
+  isolation: isolate;
   mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
-
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
 }
 
 .testimonials-mask:hover ul {
   animation-play-state: paused;
+}
+
+.animate-testimonials,
+.animate-testimonials-reverse {
+  will-change: transform;
 }
 
 .animate-testimonials {

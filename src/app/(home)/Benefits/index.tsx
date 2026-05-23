@@ -2,8 +2,7 @@
 import SectionTitle from 'src/components/SectionTitle';
 import PlantIcon from 'public/icons/plant.svg';
 import { useRef } from 'react';
-import { gsap, useGSAP } from 'src/lib/gsap';
-import SplitText from 'gsap/SplitText';
+import { gsap, useGSAP, SplitText } from 'src/lib/gsap';
 
 const listBase = '3xl:min-h-[19.584vw] min-h-60 md:min-h-66 lg:min-h-94';
 
@@ -87,7 +86,6 @@ const Benefits = () => {
       gsap.fromTo(
         split.chars,
         {
-          opacity: 0,
           y: 40,
           scale: 0.9,
           filter: 'blur(12px)',
