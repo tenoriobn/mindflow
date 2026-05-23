@@ -12,6 +12,26 @@ const Testimonials = () => {
 
   useGSAP(
     () => {
+      const testimonials = sectionRef.current;
+      const finalSection = document.querySelector('.final-section');
+
+      if (!testimonials || !finalSection) {
+        return;
+      }
+
+      gsap.to(testimonials, {
+        scale: 0.2,
+        opacity: 0.4,
+        ease: 'none',
+
+        scrollTrigger: {
+          trigger: finalSection,
+          start: 'top 90%',
+          end: 'top 10%',
+          scrub: true,
+        },
+      });
+
       if (!titleRef.current) {
         return;
       }
@@ -70,8 +90,8 @@ const Testimonials = () => {
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 90%',
-              end: 'top 20%',
+              start: 'top 95%',
+              end: 'top 35%',
               scrub: true,
             },
           }
@@ -93,8 +113,8 @@ const Testimonials = () => {
 
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 50%',
-            end: 'top 20%',
+            start: 'top 90%',
+            end: 'top 30%',
             scrub: true,
           },
         }
@@ -116,8 +136,8 @@ const Testimonials = () => {
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 40%',
-              end: 'top 15%',
+              start: 'top 80%',
+              end: 'top 25%',
               scrub: true,
             },
           }
@@ -140,8 +160,8 @@ const Testimonials = () => {
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 30%',
-              end: 'top 10%',
+              start: 'top 75%',
+              end: 'top 20%',
               scrub: true,
             },
           }
@@ -162,7 +182,7 @@ const Testimonials = () => {
       ref={sectionRef}
       id="depoimentos"
       aria-labelledby="testimonials-title"
-      className="flex min-h-svh flex-col overflow-hidden max-md:max-h-152 md:max-h-svh"
+      className="relative z-10 flex min-h-svh flex-col overflow-hidden max-md:max-h-152 md:max-h-svh"
     >
       <SectionTitle
         ref={titleRef}
