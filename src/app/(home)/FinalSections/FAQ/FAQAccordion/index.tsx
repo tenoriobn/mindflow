@@ -6,12 +6,11 @@ import ArrowIcon from 'public/icons/arrow.svg';
 
 const FAQAccordion = () => {
   const [openFAQId, setOpenFAQId] = useState<number>(faqItems[0].id);
-
   const itemRefs = useRef<Record<number, HTMLButtonElement | null>>({});
-
+  const panelRefs = useRef<Record<number, HTMLDivElement | null>>({});
   const userInteractedRef = useRef(false);
 
-  useSmoothCenterScroll(openFAQId, itemRefs, userInteractedRef, 300);
+  useSmoothCenterScroll(openFAQId, itemRefs, panelRefs, userInteractedRef, 300);
 
   const toggleItem = (serviceId: number) => {
     userInteractedRef.current = true;
@@ -32,7 +31,7 @@ const FAQAccordion = () => {
           return (
             <li
               key={id}
-              className="bg-gradient-accordion 3xl:rounded-[2.083vw] relative rounded-[1.25rem] md:rounded-[2.5rem]"
+              className="faq-item bg-gradient-accordion 3xl:rounded-[2.083vw] relative rounded-[1.25rem] md:rounded-[2.5rem]"
             >
               <h3>
                 <button
@@ -60,6 +59,9 @@ const FAQAccordion = () => {
                   </div>
 
                   <div
+                    ref={(el) => {
+                      panelRefs.current[id] = el;
+                    }}
                     id={panelId}
                     role="region"
                     aria-labelledby={buttonId}

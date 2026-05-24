@@ -20,10 +20,10 @@ const Testimonials = () => {
       }
 
       gsap.to(testimonials, {
-        scale: 0.2,
-        opacity: 0.4,
+        y: '100vh',
+        scale: 0.8,
+        opacity: 0,
         ease: 'none',
-
         scrollTrigger: {
           trigger: finalSection,
           start: 'top 90%',

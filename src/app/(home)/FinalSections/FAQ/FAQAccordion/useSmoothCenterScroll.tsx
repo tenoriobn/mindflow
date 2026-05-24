@@ -1,25 +1,28 @@
-import type { RefObject } from "react";
-import { useEffect, useRef } from "react";
+import type { RefObject } from 'react';
+import { useEffect, useRef } from 'react';
+
+const VIEWPORT_PADDING = 32;
+
+const easeInOutCubic = (progress: number) =>
+  progress < 0.5 ? 4 * progress * progress * progress : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
 export function useSmoothCenterScroll(
   activeId: number | null,
   itemRefs: RefObject<Record<number, HTMLElement | null>>,
+  panelRefs: RefObject<Record<number, HTMLDivElement | null>>,
   userInteractedRef: RefObject<boolean>,
-  duration = 300,
+  duration = 300
 ) {
   const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
-    if (!userInteractedRef.current) {
+    if (!userInteractedRef.current || activeId === null || !document.hasFocus()) {
       return;
     }
 
-    if (activeId === null) {
-      return;
-    }
+    const panel = panelRefs.current[activeId];
 
-    const element = itemRefs.current[activeId];
-    if (!element || !document.hasFocus()) {
+    if (!panel) {
       return;
     }
 
@@ -27,44 +30,59 @@ export function useSmoothCenterScroll(
       cancelAnimationFrame(animationFrameRef.current);
     }
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const rect = element.getBoundingClientRect();
-        const absoluteTop = rect.top + window.scrollY;
+    const handleTransitionEnd = (event: TransitionEvent) => {
+      if (event.target !== panel) {
+        return;
+      }
 
-        const elementHeight = element.offsetHeight;
-        const viewportHeight = window.innerHeight;
+      const element = itemRefs.current[activeId];
 
-        const target = absoluteTop - viewportHeight / 2 + elementHeight / 2;
+      if (!element) {
+        return;
+      }
 
-        const start = window.scrollY;
-        const distance = target - start;
-        const startTime = performance.now();
+      const rect = element.getBoundingClientRect();
 
-        function animate(currentTime: number) {
-          const timeElapsed = currentTime - startTime;
-          const progress = Math.min(timeElapsed / duration, 1);
+      let targetScroll = window.scrollY;
 
-          const ease =
-            progress < 0.5
-              ? 4 * progress * progress * progress
-              : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+      if (rect.bottom > window.innerHeight - VIEWPORT_PADDING) {
+        targetScroll += rect.bottom - window.innerHeight + VIEWPORT_PADDING;
+      }
 
-          window.scrollTo(0, start + distance * ease);
+      if (rect.top < VIEWPORT_PADDING) {
+        targetScroll += rect.top - VIEWPORT_PADDING;
+      }
 
-          if (progress < 1) {
-            animationFrameRef.current = requestAnimationFrame(animate);
-          }
+      const start = window.scrollY;
+      const distance = targetScroll - start;
+
+      if (Math.abs(distance) < 5) {
+        return;
+      }
+
+      const startTime = performance.now();
+
+      const animate = (currentTime: number) => {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        window.scrollTo(0, start + distance * easeInOutCubic(progress));
+
+        if (progress < 1) {
+          animationFrameRef.current = requestAnimationFrame(animate);
         }
+      };
 
-        animationFrameRef.current = requestAnimationFrame(animate);
-      });
-    });
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    panel.addEventListener('transitionend', handleTransitionEnd);
 
     return () => {
+      panel.removeEventListener('transitionend', handleTransitionEnd);
+
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [activeId, itemRefs, duration, userInteractedRef]);
+  }, [activeId, duration, itemRefs, panelRefs, userInteractedRef]);
 }

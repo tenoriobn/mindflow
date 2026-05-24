@@ -36,8 +36,8 @@ const BonusCTA = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'top 60%',
+            start: 'top 50%',
+            end: 'top 10%',
             scrub: true,
           },
         });
@@ -97,8 +97,8 @@ const BonusCTA = () => {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'top 60%',
+            start: 'top 50%',
+            end: 'top 10%',
             scrub: true,
           },
         });
