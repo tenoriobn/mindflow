@@ -33,7 +33,7 @@ export default function SmoothScrolling({ children }: { children: React.ReactNod
 
   return (
     <div id="smooth-wrapper" ref={wrapperRef}>
-      <div id="smooth-content" ref={contentRef}>
+      <div id="smooth-content" ref={contentRef} className="3xl:pb-[1.667vw] pb-8">
         {children}
       </div>
     </div>

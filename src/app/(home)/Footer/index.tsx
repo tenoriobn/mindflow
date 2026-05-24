@@ -22,7 +22,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="3xl:px-[4.375vw] 3xl:mb-[1.667vw] mb-8 px-4 md:px-8 2xl:px-21">
+      <footer className="3xl:px-[4.375vw] px-4 md:px-8 2xl:px-21">
         <div className="bg-gradient-header 3xl:rounded-b-[2.083vw] 3xl:rounded-tr-[2.083vw] 3xl:p-[1.667vw] flex flex-col items-center overflow-hidden rounded-tr-[1.25rem] rounded-b-[1.25rem] bg-slate-950 p-4 md:rounded-tr-[2.5rem] md:rounded-b-[2.5rem] md:p-8">
           <div className="3xl:gap-[1.667vw] flex w-full items-center justify-center gap-4 max-lg:flex-col md:gap-8 lg:justify-between">
             <nav

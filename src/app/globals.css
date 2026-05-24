@@ -226,11 +226,20 @@
     }
   }
 
-  .bg-gradient-text-animated {
+  .brand-char {
+    display: inline-block;
+
     background-image: var(--background-image-gradient-text);
 
     background-size: 100% 140%;
     background-position: top 100%;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
 
     animation: brand-glow 2s ease-in-out infinite alternate;
   }

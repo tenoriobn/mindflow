@@ -67,19 +67,22 @@ const FAQ = () => {
             duration: 0.6,
           },
           0.3
-        )
-        .from(
-          '.faq-item',
-          {
-            scale: 0.8,
-            opacity: 0,
-            filter: 'blur(10px)',
-            stagger: 0.12,
-            ease: 'power3.out',
-            duration: 1,
-          },
-          0.8
         );
+
+      gsap.from('.faq-item', {
+        scale: 0.8,
+        opacity: 0,
+        filter: 'blur(10px)',
+        stagger: 0.12,
+        ease: 'power3.out',
+        duration: 1,
+        scrollTrigger: {
+          trigger: '.faq-item',
+          start: 'top 60%',
+          end: 'top 10%',
+          scrub: true,
+        },
+      });
     },
     {
       scope: sectionRef,
