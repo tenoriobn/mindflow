@@ -10,15 +10,34 @@ const HeroSection = () => {
 
   useGSAP(
     () => {
-      gsap.to(sectionRef.current, {
-        width: '10%',
+      const heroSection = sectionRef.current;
+      const aboutSection = document.querySelector('.about-section');
 
+      if (!heroSection || !aboutSection) {
+        return;
+      }
+      // gsap.to(sectionRef.current, {
+      //   width: '10%',
+
+      //   ease: 'none',
+
+      //   scrollTrigger: {
+      //     trigger: sectionRef.current,
+      //     start: 'bottom bottom',
+      //     end: 'bottom top',
+      //     scrub: true,
+      //   },
+      // });
+
+      gsap.to(heroSection, {
+        y: '100vh',
+        scale: 0.5,
+        filter: 'blur(12px)',
         ease: 'none',
-
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'bottom bottom',
-          end: 'bottom top',
+          trigger: aboutSection,
+          start: 'top 90%',
+          end: 'top 10%',
           scrub: true,
         },
       });
