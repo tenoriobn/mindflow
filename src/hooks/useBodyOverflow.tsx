@@ -21,12 +21,5 @@ export function useBodyOverflow(shouldHide: boolean) {
 
       smoother?.paused(false);
     }
-
-    return () => {
-      html.style.overflow = '';
-      body.style.overflow = '';
-
-      smoother?.paused(false);
-    };
   }, [shouldHide]);
 }
