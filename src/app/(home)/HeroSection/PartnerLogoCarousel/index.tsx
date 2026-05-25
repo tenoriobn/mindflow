@@ -11,7 +11,10 @@ const PartnerLogoCarousel = () => {
       <div aria-hidden="true" className="partner-mask overflow-hidden">
         <div className="partner-track 3xl:gap-[3.334vw] flex w-max items-center gap-4 md:gap-8">
           {[...partnerLogos, ...partnerLogos].map(({ name, Logo }, index) => (
-            <div key={`${name}-${index}`} className="flex shrink-0 items-center justify-center">
+            <div
+              key={`${name}-${index}`}
+              className="partner-logo-item flex shrink-0 items-center justify-center opacity-0"
+            >
               <Logo className="3xl:h-[2.5vw] h-10 w-auto" aria-hidden="true" focusable="false" />
             </div>
           ))}

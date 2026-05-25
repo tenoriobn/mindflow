@@ -1,9 +1,9 @@
 'use client';
 import Image from 'next/image';
-import './hero-section.css';
 import PartnerLogoCarousel from './PartnerLogoCarousel';
 import { useRef } from 'react';
-import { gsap, useGSAP } from 'src/lib/gsap';
+import { gsap, SplitText, useGSAP } from 'src/lib/gsap';
+import './hero-section.css';
 
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -16,18 +16,6 @@ const HeroSection = () => {
       if (!heroSection || !aboutSection) {
         return;
       }
-      // gsap.to(sectionRef.current, {
-      //   width: '10%',
-
-      //   ease: 'none',
-
-      //   scrollTrigger: {
-      //     trigger: sectionRef.current,
-      //     start: 'bottom bottom',
-      //     end: 'bottom top',
-      //     scrub: true,
-      //   },
-      // });
 
       gsap.to(heroSection, {
         y: '100vh',
@@ -42,18 +30,114 @@ const HeroSection = () => {
         },
       });
 
-      gsap.to('.hero-content', {
-        opacity: 0,
-        y: -40,
-        ease: 'none',
+      const title = heroSection.querySelector('.hero-title');
+      const description = heroSection.querySelector('.hero-description');
+      const button = heroSection.querySelector('.hero-button');
+      const heroImage = heroSection.querySelector('.hero-image');
+      const partnerLogos = document.querySelectorAll('.partner-logo-item');
 
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'bottom 95%',
-          end: 'bottom 55%',
-          scrub: true,
+      if (!title || !description || !button || !heroImage || !partnerLogos.length) {
+        return;
+      }
+
+      const splitTitle = SplitText.create(title, {
+        type: 'words',
+        mask: 'words',
+      });
+
+      const splitDescription = SplitText.create(description, {
+        type: 'words',
+        mask: 'words',
+      });
+
+      gsap.set([title, description], {
+        visibility: 'visible',
+      });
+
+      const tl = gsap.timeline({
+        defaults: {
+          ease: 'power4.out',
         },
       });
+
+      tl.fromTo(
+        heroImage,
+        {
+          scale: 1.15,
+          opacity: 0,
+          filter: 'blur(12px)',
+        },
+        {
+          scale: 1,
+          opacity: 1,
+          filter: 'blur(0px)',
+          duration: 1.2,
+        }
+      )
+        .fromTo(
+          splitTitle.words,
+          {
+            yPercent: 120,
+            opacity: 0,
+          },
+          {
+            yPercent: 0,
+            opacity: 1,
+            stagger: 0.03,
+            duration: 0.8,
+          },
+          '-=0.65'
+        )
+        .fromTo(
+          splitDescription.words,
+          {
+            yPercent: 120,
+            opacity: 0,
+          },
+          {
+            yPercent: 0,
+            opacity: 1,
+            stagger: 0.015,
+            duration: 0.6,
+            ease: 'power3.out',
+          },
+          '-=0.45'
+        )
+        .fromTo(
+          button,
+          {
+            y: 30,
+            opacity: 0,
+            scale: 0.95,
+            filter: 'blur(8px)',
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 0.5,
+            ease: 'power3.out',
+          },
+          '-=0.3'
+        )
+        .fromTo(
+          partnerLogos,
+          {
+            opacity: 0,
+            scale: 0.75,
+            filter: 'blur(12px)',
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            filter: 'blur(0px)',
+            duration: 0.5,
+            stagger: 0.04,
+            ease: 'power3.out',
+          },
+          '-=0.6'
+        );
     },
     {
       scope: sectionRef,
@@ -82,7 +166,7 @@ const HeroSection = () => {
             (max-width: 1440px) 1400px,
             1920px
           "
-          className="object-cover object-[calc(81%+120px)_center] md:object-[calc(84%+120px)_center] xl:object-center"
+          className="hero-image object-cover object-[calc(81%+120px)_center] opacity-0 md:object-[calc(84%+120px)_center] xl:object-center"
         />
 
         <div
@@ -96,12 +180,12 @@ const HeroSection = () => {
         >
           <h2
             id="hero-section-title"
-            className="3xl:text-[4.8vw] 3xl:mb-[1.667vw] mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
+            className="hero-title 3xl:text-[4.8vw] 3xl:mb-[1.667vw] invisible mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
           >
             Liberte sua mente.
           </h2>
 
-          <p className="3xl:text-[1.46vw] 3xl:mb-[3.334vw] mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
+          <p className="hero-description 3xl:text-[1.46vw] 3xl:mb-[3.334vw] invisible mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
             <span className="font-medium">Descubra o Método MindFlow:</span> um treinamento online
             que combina neurociência, design e produtividade para te ajudar a ter foco e resultados,
             sem estresse e sem fórmulas mágicas.
@@ -109,7 +193,7 @@ const HeroSection = () => {
 
           <button
             type="button"
-            className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
+            className="hero-button bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 opacity-0 active:scale-90 max-md:w-full md:px-16"
           >
             Entrar na Lista VIP
           </button>
