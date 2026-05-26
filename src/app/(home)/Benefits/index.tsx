@@ -1,5 +1,8 @@
+'use client';
 import SectionTitle from 'src/components/SectionTitle';
 import PlantIcon from 'public/icons/plant.svg';
+import { useRef } from 'react';
+import { gsap, useGSAP, SplitText } from 'src/lib/gsap';
 
 const listBase = '3xl:min-h-[19.584vw] min-h-60 md:min-h-66 lg:min-h-94';
 
@@ -59,13 +62,171 @@ const benefits = [
 ];
 
 const Benefits = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+
+  useGSAP(
+    () => {
+      if (!titleRef.current) {
+        return;
+      }
+
+      const split = SplitText.create(titleRef.current, {
+        type: 'chars,words',
+        charsClass: 'char',
+      });
+
+      gsap.set(split.chars, {
+        opacity: 0,
+        y: 40,
+        scale: 0.9,
+        filter: 'blur(12px)',
+      });
+
+      gsap.fromTo(
+        split.chars,
+        {
+          y: 40,
+          scale: 0.9,
+          filter: 'blur(12px)',
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          duration: 0.8,
+          ease: 'power3.out',
+          stagger: 0.03,
+
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 95%',
+            end: 'top 40%',
+            scrub: true,
+          },
+        }
+      );
+
+      const mm = gsap.matchMedia();
+
+      const cardsWrapper = gsap.utils.toArray<HTMLElement>('.cards-wrapper');
+      const darkCards = gsap.utils.toArray<HTMLElement>('.benefit-card-dark');
+      const lightCards = gsap.utils.toArray<HTMLElement>('.benefit-card-light');
+      const lightCardsContent = gsap.utils.toArray<HTMLElement>('.benefit-card-light-content');
+
+      mm.add('(min-width: 1024px)', () => {
+        gsap.fromTo(
+          cardsWrapper,
+          {
+            opacity: 0.5,
+            scale: 0.8,
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            ease: 'none',
+
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 90%',
+              end: 'top 10%',
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          lightCardsContent[0],
+          {
+            opacity: 0,
+            scale: 0.8,
+            filter: 'blur(12px)',
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            ease: 'none',
+            filter: 'blur(0px)',
+
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 65%',
+              end: 'top 10%',
+              scrub: true,
+            },
+          }
+        );
+
+        gsap.fromTo(
+          lightCardsContent[1],
+          {
+            opacity: 0,
+            scale: 0.85,
+            filter: 'blur(12px)',
+          },
+          {
+            opacity: 1,
+            scale: 1,
+            ease: 'none',
+            filter: 'blur(0px)',
+
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 20%',
+              end: 'top 5%',
+              scrub: true,
+            },
+          }
+        );
+      });
+
+      mm.add('(max-width: 1023px)', () => {
+        [...darkCards, ...lightCards].forEach((card) => {
+          gsap.fromTo(
+            card,
+            {
+              opacity: 0,
+              scale: 0.85,
+              filter: 'blur(12px)',
+            },
+            {
+              filter: 'blur(0px)',
+              opacity: 1,
+              scale: 1,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top 80%',
+                end: 'top 65%',
+                scrub: true,
+              },
+            }
+          );
+        });
+      });
+
+      return () => {
+        split.revert();
+      };
+    },
+    {
+      scope: sectionRef,
+    }
+  );
+
   return (
-    <section id="beneficios" aria-labelledby="benefits-title" className="flex min-h-svh flex-col">
-      <SectionTitle id="benefits-title" className="text-slate-950">
+    <section
+      ref={sectionRef}
+      id="beneficios"
+      aria-labelledby="benefits-title"
+      className="flex min-h-svh flex-col"
+    >
+      <SectionTitle ref={titleRef} id="benefits-title" className="text-slate-950">
         O que você vai conquistar
       </SectionTitle>
 
-      <ul className="grid flex-1 max-md:gap-4 md:max-lg:gap-8 lg:grid-cols-2">
+      <ul className="cards-wrapper grid flex-1 max-md:gap-4 md:max-lg:gap-8 lg:grid-cols-2">
         {benefits.map((benefit) => {
           const isImageCard = benefit.variant === 'image';
 
@@ -73,7 +234,9 @@ const Benefits = () => {
             <li
               key={benefit.title}
               className={`${listBase} ${
-                isImageCard ? listBaseLight : `${listBaseDark} ${benefit.itemClass}`
+                isImageCard
+                  ? `benefit-card-light ${listBaseLight}`
+                  : `benefit-card-dark ${listBaseDark} ${benefit.itemClass}`
               }`}
             >
               <article
@@ -85,7 +248,7 @@ const Benefits = () => {
               >
                 {isImageCard ? (
                   <div
-                    className={`${contentBase} ${backgroundCardBase}`}
+                    className={`benefit-card-light-content ${contentBase} ${backgroundCardBase}`}
                     style={{
                       backgroundImage: `var(--background-image-gradient-card), url(${benefit.image})`,
                     }}
