@@ -102,7 +102,7 @@ const Benefits = () => {
           start: 'top 88%',
           end: 'top 55%',
 
-          scrub: 0.6,
+          scrub: 0.8,
 
           invalidateOnRefresh: true,
 
@@ -284,7 +284,7 @@ const Benefits = () => {
                 start: 'top 82%',
                 end: 'top 65%',
 
-                scrub: 0.6,
+                scrub: 0.8,
 
                 invalidateOnRefresh: true,
 

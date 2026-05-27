@@ -74,7 +74,7 @@ const BonusCTA = () => {
             trigger: section,
             start: 'top 50%',
             end: 'top 15%',
-            scrub: 1,
+            scrub: 0.8,
           },
         });
 
@@ -141,7 +141,7 @@ const BonusCTA = () => {
             trigger: section,
             start: 'top 82%',
             end: 'top 40%',
-            scrub: 1,
+            scrub: 0.8,
           },
         });
 

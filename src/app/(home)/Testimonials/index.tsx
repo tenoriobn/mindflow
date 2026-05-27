@@ -43,7 +43,7 @@ const Testimonials = () => {
           start: 'top 92%',
           end: 'top 12%',
 
-          scrub: 1,
+          scrub: 0.8,
 
           invalidateOnRefresh: true,
 
@@ -105,7 +105,7 @@ const Testimonials = () => {
           start: 'top 90%',
           end: 'top 55%',
 
-          scrub: 0.6,
+          scrub: 0.8,
 
           invalidateOnRefresh: true,
 
@@ -191,7 +191,7 @@ const Testimonials = () => {
             start: 'top 88%',
             end: 'top 40%',
 
-            scrub: 0.7,
+            scrub: 0.8,
 
             invalidateOnRefresh: true,
 
@@ -235,7 +235,7 @@ const Testimonials = () => {
             start: 'top 82%',
             end: 'top 35%',
 
-            scrub: 0.7,
+            scrub: 0.8,
 
             invalidateOnRefresh: true,
 
@@ -267,7 +267,7 @@ const Testimonials = () => {
             start: 'top 76%',
             end: 'top 30%',
 
-            scrub: 0.7,
+            scrub: 0.8,
 
             invalidateOnRefresh: true,
 

@@ -28,7 +28,7 @@ const BrandSignature = () => {
             trigger: sectionRef.current,
             start: 'top 80%',
             end: 'top 20%',
-            scrub: true,
+            scrub: 0.8,
           },
         }
       );

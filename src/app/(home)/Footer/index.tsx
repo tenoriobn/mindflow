@@ -25,7 +25,7 @@ const Footer = () => {
           trigger: footerRef.current,
           start: 'top 95%',
           end: 'top 75%',
-          scrub: true,
+          scrub: 0.8,
         },
       });
 

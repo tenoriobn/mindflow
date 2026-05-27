@@ -36,7 +36,7 @@ const FAQ = () => {
           trigger: sectionRef.current,
           start: 'top 40%',
           end: 'top 10%',
-          scrub: true,
+          scrub: 0.8,
         },
       });
 
@@ -81,7 +81,7 @@ const FAQ = () => {
           trigger: '.faq-item',
           start: 'top 60%',
           end: 'top 10%',
-          scrub: true,
+          scrub: 0.8,
         },
       });
     },
