@@ -24,7 +24,7 @@ const HeroSection = () => {
         ease: 'none',
         scrollTrigger: {
           trigger: aboutSection,
-          start: 'top 90%',
+          start: 'top 99%',
           end: 'top 10%',
           scrub: true,
         },
@@ -149,7 +149,7 @@ const HeroSection = () => {
       ref={sectionRef}
       id="inicio"
       aria-labelledby="hero-section-title"
-      className="3xl:pt-[7.913vw] flex min-h-svh w-full flex-col self-center pt-23 md:pt-31 xl:pt-35"
+      className="3xl:pt-[7.913vw] 3xl:pb-[1.667vw] flex min-h-svh w-full flex-col self-center pt-23 pb-4 md:pt-31 md:pb-8 xl:pt-35"
     >
       <div className="3xl:p-[1.667vw] 3xl:rounded-tl-[2.083vw] 3xl:rounded-r-[2.083vw] relative isolate grid flex-1 items-center overflow-hidden rounded-tl-[1.25rem] rounded-r-[1.25rem] bg-slate-950 p-4 md:rounded-tl-[2.5rem] md:rounded-r-[2.5rem] md:p-8">
         <Image
