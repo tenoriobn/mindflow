@@ -1,3 +1,4 @@
+'use client';
 import SectionDescription from 'src/components/SectionDescription';
 import SectionTitle from 'src/components/SectionTitle';
 import DiamondIcon from 'public/icons/diamond.svg';
