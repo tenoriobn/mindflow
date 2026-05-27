@@ -17,83 +17,118 @@ const HeroSection = () => {
         return;
       }
 
-      gsap.to(heroSection, {
-        y: '100vh',
-        scale: 0.5,
-        filter: 'blur(12px)',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: aboutSection,
-          start: 'top 99%',
-          end: 'top 10%',
-          scrub: true,
-        },
-      });
-
       const heroContent = heroSection.querySelector('.hero-content');
       const heroImage = heroSection.querySelector('.hero-image');
-      const partnerWrapper = document.querySelectorAll('.partner-mask');
+      const partnerWrapper = heroSection.querySelectorAll('.partner-mask');
 
-      if (!heroImage || !partnerWrapper) {
+      if (!heroContent || !heroImage || !partnerWrapper.length) {
         return;
       }
 
+      gsap.set(heroSection, {
+        transformOrigin: 'center center',
+        force3D: true,
+      });
+
+      gsap.set([heroImage, heroContent, partnerWrapper], {
+        force3D: true,
+        backfaceVisibility: 'hidden',
+      });
+
+      gsap.to(heroSection, {
+        yPercent: 82,
+        scale: 0.92,
+
+        opacity: 0.35,
+        filter: 'blur(4px)',
+
+        ease: 'none',
+
+        scrollTrigger: {
+          trigger: aboutSection,
+
+          start: 'top 92%',
+          end: 'top 15%',
+
+          scrub: 1,
+
+          invalidateOnRefresh: true,
+
+          onEnter: () => {
+            gsap.set(heroSection, {
+              willChange: 'transform, opacity, filter',
+            });
+          },
+
+          onLeaveBack: () => {
+            gsap.set(heroSection, {
+              willChange: 'auto',
+            });
+          },
+        },
+      });
+
       const tl = gsap.timeline({
         defaults: {
-          ease: 'power4.out',
+          ease: 'power3.out',
         },
       });
 
       tl.fromTo(
         heroImage,
         {
-          scale: 1.15,
+          scale: 1.08,
           opacity: 0,
-          filter: 'blur(12px)',
         },
         {
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+
           duration: 1.2,
+
+          clearProps: 'transform',
         }
       )
+
         .fromTo(
           heroContent,
           {
-            scale: 1.05,
+            y: 24,
             opacity: 0,
-            filter: 'blur(12px)',
+            filter: 'blur(6px)',
           },
           {
-            scale: 1,
+            y: 0,
             opacity: 1,
             filter: 'blur(0px)',
-            duration: 0.8,
+
+            duration: 0.9,
+
+            clearProps: 'filter',
           },
-          '-=0.6'
+          '-=0.7'
         )
+
         .fromTo(
           partnerWrapper,
           {
-            scale: 1.25,
+            y: 18,
             opacity: 0,
-            filter: 'blur(12px)',
           },
           {
-            scale: 1,
+            y: 0,
             opacity: 1,
-            filter: 'blur(0px)',
-            duration: 0.8,
-            stagger: 0.06,
-            ease: 'power3.out',
+
+            duration: 0.65,
+            stagger: 0.05,
+            ease: 'power2.out',
+
+            clearProps: 'transform',
           },
-          '-=0.3'
+          '-=0.35'
         );
     },
-    {
-      scope: sectionRef,
-    }
+    { scope: sectionRef }
   );
 
   return (
