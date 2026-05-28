@@ -5,24 +5,29 @@ import Navbar from './Navbar';
 import Logo from './Logo';
 import CTAButton from './CTAButton';
 import MenuToggleButton from './MenuToggleButton';
+import CloseIcon from 'public/icons/close.svg';
 
 const Header = () => {
   const { isMenuActive, setIsMenuActive } = useMenuMobile();
 
   return (
     <header className="3xl:px-[4.375vw] 3xl:pt-[1.667vw] fixed z-10 w-full px-4 pt-4 md:px-8 md:pt-8 2xl:px-21">
-      <div className="bg-gradient-header 3xl:pl-[1.667vw] 3xl:p-[.625vw] flex items-center justify-between gap-4 rounded-full bg-slate-950 p-3 pl-4 md:gap-8 md:pl-8 xl:grid xl:grid-cols-[1fr_auto_1fr]">
+      <div className="bg-gradient-header 3xl:pl-[1.667vw] 3xl:p-[.625vw] relative flex items-center justify-between gap-4 rounded-full bg-slate-950 p-3 pl-4 md:gap-8 md:pl-8 xl:grid xl:grid-cols-[1fr_auto_1fr]">
         <Logo />
 
-        <MenuToggleButton
-          icon={MenuIcon}
-          aria-label="Abrir menu de navegação"
-          aria-expanded={isMenuActive}
-          onClick={() => setIsMenuActive(true)}
-          className="xl:hidden"
-        />
+        <div className="">
+          <MenuToggleButton
+            isMenuActive={isMenuActive}
+            icon={isMenuActive ? CloseIcon : MenuIcon}
+            iconClassName={isMenuActive ? 'h-3.5 w-5' : ''}
+            aria-label="Abrir menu de navegação"
+            aria-expanded={isMenuActive}
+            onClick={() => setIsMenuActive((prev) => !prev)}
+            className="xl:hidden"
+          />
 
-        <Navbar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
+          <Navbar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} />
+        </div>
 
         <CTAButton className="hidden justify-self-end xl:block">Começar agora</CTAButton>
       </div>

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import { useWindowSize, useBodyOverflow } from 'src/hooks';
+import { useWindowSize } from 'src/hooks';
 
 export function useMenuMobile() {
   const { isMobile } = useWindowSize();
@@ -11,8 +11,6 @@ export function useMenuMobile() {
       setIsMenuActive(false);
     }
   }, [isMobile, isMenuActive]);
-
-  useBodyOverflow(isMobile ? isMenuActive : false);
 
   return {
     isMobile,
