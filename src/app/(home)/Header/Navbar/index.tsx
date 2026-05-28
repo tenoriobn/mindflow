@@ -1,13 +1,28 @@
-import Link from 'next/link';
 import { MENU_LINKS } from './menuLinks';
 import CloseIcon from 'public/icons/close.svg';
 import type { NavbarProps } from './navbar.type';
 import Logo from '../Logo';
 import CTAButton from '../CTAButton';
 import MenuToggleButton from '../MenuToggleButton';
+import { gsap } from 'src/lib/gsap';
 
 const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
   const activeHref = MENU_LINKS[0].href;
+
+  const handleScrollToSection = (href: string) => {
+    gsap.to(window, {
+      duration: 1.2,
+
+      scrollTo: {
+        y: href,
+        offsetY: 0,
+      },
+
+      ease: 'power3.inOut',
+    });
+
+    setIsMenuActive(false);
+  };
 
   return (
     <>
@@ -41,14 +56,18 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
 
             return (
               <li key={href}>
-                <Link
-                  href={href}
+                <button
+                  type="button"
                   aria-current={isActive ? 'page' : undefined}
-                  onClick={() => setIsMenuActive(false)}
-                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
+                  onClick={() => handleScrollToSection(href)}
+                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${
+                    isActive
+                      ? 'font-medium text-white/95'
+                      : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'
+                  } `}
                 >
                   {label}
-                </Link>
+                </button>
               </li>
             );
           })}

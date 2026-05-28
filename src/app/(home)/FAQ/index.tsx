@@ -133,20 +133,20 @@ const FAQ = () => {
   return (
     <section
       ref={sectionRef}
-      id="bonus-cta"
-      aria-labelledby="bonus-cta-title"
+      id="faq"
+      aria-labelledby="faq-title"
       className="flex overflow-hidden max-xl:flex-col lg:grid lg:grid-cols-2 lg:items-center"
     >
       <header className="faq-wrapper inverted-radius 3xl:p-[1.667vw] flex h-full flex-col justify-center p-4 md:p-8">
         <SectionTitle
-          id="bonus-cta-title"
+          id="faq-title"
           className="faq-title text-white/95 max-lg:mx-auto max-lg:max-w-160 lg:text-left"
         >
           Dúvidas frequentes
         </SectionTitle>
 
         <SectionDescription
-          id="bonus-cta-description"
+          id="faq-description"
           className="faq-description text-white/90 max-lg:mx-auto max-lg:max-w-160 max-lg:text-center"
         >
           Não encontrou o que procurava? Tire suas dúvidas com a gente e descubra como o MindFlow
@@ -157,7 +157,7 @@ const FAQ = () => {
           target="_blank"
           rel="noopener noreferrer"
           href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20entender%20melhor%20como%20o%20MindFlow%20pode%20me%20ajudar."
-          aria-describedby="bonus-cta-description"
+          aria-describedby="faq-description"
           className="faq-button bg-gradient-button bg-gradient-button-whatsapp 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 active:scale-90 max-lg:self-center md:max-w-max md:px-16"
         >
           <WhatsappIcon
