@@ -47,16 +47,16 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: aboutSection,
 
-          start: 'top 92%',
-          end: 'top 15%',
+          start: 'top 95%',
+          end: 'top 70%',
 
-          scrub: 1,
+          scrub: 0.8,
 
           invalidateOnRefresh: true,
 
           onEnter: () => {
             gsap.set(heroSection, {
-              willChange: 'transform, opacity, filter',
+              willChange: 'transform, opacity',
             });
           },
 
@@ -84,7 +84,7 @@ const HeroSection = () => {
           scale: 1,
           opacity: 1,
 
-          duration: 1.2,
+          duration: 1,
 
           clearProps: 'transform',
         }
@@ -106,7 +106,7 @@ const HeroSection = () => {
 
             clearProps: 'filter',
           },
-          '-=0.7'
+          '-=0.65'
         )
 
         .fromTo(
@@ -125,7 +125,7 @@ const HeroSection = () => {
 
             clearProps: 'transform',
           },
-          '-=0.35'
+          '-=0.5'
         );
     },
     { scope: sectionRef }

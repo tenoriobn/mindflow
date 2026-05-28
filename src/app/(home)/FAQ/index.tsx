@@ -13,15 +13,27 @@ const FAQ = () => {
 
   useGSAP(
     () => {
-      if (!sectionRef.current) {
-        return;
-      }
-      const title = sectionRef.current.querySelector('.faq-title');
-      const description = sectionRef.current.querySelector('.faq-description');
+      const section = sectionRef.current;
+      const mm = gsap.matchMedia();
 
-      if (!title || !description) {
+      if (!section) {
         return;
       }
+
+      const title = section.querySelector('.faq-title');
+      const description = section.querySelector('.faq-description');
+      const button = section.querySelector('.faq-button');
+      const faqItems = gsap.utils.toArray<HTMLElement>('.faq-item');
+
+      if (!title || !description || !button || !faqItems.length) {
+        return;
+      }
+
+      gsap.set([title, description, button, faqItems], {
+        willChange: 'transform, opacity',
+        force3D: true,
+        backfaceVisibility: 'hidden',
+      });
 
       const splitTitle = SplitText.create(title, {
         type: 'words',
@@ -31,59 +43,87 @@ const FAQ = () => {
         type: 'words',
       });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 40%',
-          end: 'top 10%',
-          scrub: 0.8,
+      mm.add(
+        {
+          desktop: '(min-width: 1024px)',
+          mobile: '(max-width: 1023px)',
         },
+        (context) => {
+          const { desktop } = context.conditions!;
+
+          const introTl = gsap.timeline({
+            defaults: {
+              ease: 'power3.out',
+            },
+
+            scrollTrigger: {
+              trigger: section,
+              start: desktop ? 'top 35%' : 'top 70%',
+              end: desktop ? 'top 15%' : 'top 55%',
+              scrub: 0.8,
+            },
+          });
+
+          introTl
+            .from(splitTitle.words, {
+              yPercent: -100,
+              opacity: 0,
+              stagger: 0.035,
+              duration: 0.7,
+            })
+            .from(
+              splitDescription.words,
+              {
+                yPercent: 40,
+                opacity: 0,
+                stagger: 0.012,
+                duration: 0.45,
+                ease: 'power2.out',
+              },
+              0.12
+            )
+            .from(
+              button,
+              {
+                opacity: 0,
+                scale: 0.92,
+                y: 16,
+                filter: 'blur(4px)',
+                duration: 0.55,
+                ease: 'power2.out',
+              },
+              0.22
+            );
+        }
+      );
+
+      faqItems.forEach((item, index) => {
+        gsap.from(item, {
+          opacity: 0,
+          scale: 0.96,
+          y: 24,
+          filter: 'blur(4px)',
+
+          duration: 0.8,
+          ease: 'power3.out',
+
+          clearProps: 'all',
+
+          scrollTrigger: {
+            trigger: item,
+            start: 'top 95%',
+            end: 'top 85%',
+            scrub: 0.8,
+          },
+
+          delay: index * 0.03,
+        });
       });
 
-      tl.from(splitTitle.words, {
-        y: -30,
-        opacity: 0,
-        stagger: 0.04,
-        ease: 'power3.out',
-        duration: 0.8,
-      })
-        .from(
-          splitDescription.words,
-          {
-            y: 15,
-            opacity: 0,
-            stagger: 0.015,
-            ease: 'power2.out',
-            duration: 0.5,
-          },
-          0.15
-        )
-        .from(
-          '.faq-button',
-          {
-            opacity: 0,
-            scale: 0.5,
-            filter: 'blur(6px)',
-            ease: 'power3.out',
-            duration: 0.6,
-          },
-          0.3
-        );
-
-      gsap.from('.faq-item', {
-        scale: 0.8,
-        opacity: 0,
-        filter: 'blur(10px)',
-        stagger: 0.12,
-        ease: 'power3.out',
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.faq-item',
-          start: 'top 60%',
-          end: 'top 10%',
-          scrub: 0.8,
-        },
-      });
+      return () => {
+        splitTitle.revert();
+        splitDescription.revert();
+      };
     },
     {
       scope: sectionRef,

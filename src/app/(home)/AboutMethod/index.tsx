@@ -30,8 +30,7 @@ const AboutMethod = () => {
       gsap.set([title, description], {
         force3D: true,
         backfaceVisibility: 'hidden',
-        transformPerspective: 1000,
-        willChange: 'clip-path, opacity, transform',
+        willChange: 'clip-path',
       });
 
       const tl = gsap.timeline({
@@ -42,8 +41,8 @@ const AboutMethod = () => {
         scrollTrigger: {
           trigger: section,
 
-          start: 'top 92%',
-          end: 'top 45%',
+          start: 'top 75%',
+          end: 'top 50%',
 
           scrub: 0.8,
 
@@ -57,7 +56,7 @@ const AboutMethod = () => {
 
           onLeaveBack: () => {
             gsap.set([title, description], {
-              willChange: 'clip-path, opacity, transform',
+              willChange: 'clip-path',
             });
           },
         },
@@ -65,24 +64,18 @@ const AboutMethod = () => {
 
       tl.to(title, {
         opacity: 1,
-
         clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
-
-        duration: 1,
 
         clearProps: 'willChange',
       }).to(
         description,
         {
           opacity: 1,
-
           clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
-
-          duration: 0.85,
 
           clearProps: 'willChange',
         },
-        0.25
+        0.2
       );
     },
     {

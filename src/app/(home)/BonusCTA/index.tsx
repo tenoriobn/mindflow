@@ -73,7 +73,7 @@ const BonusCTA = () => {
           scrollTrigger: {
             trigger: section,
             start: 'top 50%',
-            end: 'top 15%',
+            end: 'top 25%',
             scrub: 0.8,
           },
         });

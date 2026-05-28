@@ -62,8 +62,8 @@ const AboutMethodVideoPlayer = () => {
           scrollTrigger: {
             trigger: aboutVideo,
 
-            start: 'top 95%',
-            end: 'top 35%',
+            start: 'top 85%',
+            end: 'top 70%',
 
             scrub: 0.8,
 

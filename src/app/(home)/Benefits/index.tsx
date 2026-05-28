@@ -99,7 +99,7 @@ const Benefits = () => {
         scrollTrigger: {
           trigger: sectionRef.current,
 
-          start: 'top 88%',
+          start: 'top 85%',
           end: 'top 55%',
 
           scrub: 0.8,
@@ -141,8 +141,8 @@ const Benefits = () => {
             scrollTrigger: {
               trigger: sectionRef.current,
 
-              start: 'top 88%',
-              end: 'top 15%',
+              start: 'top 85%',
+              end: 'top 50%',
 
               scrub: 0.8,
 
@@ -186,7 +186,7 @@ const Benefits = () => {
               trigger: sectionRef.current,
 
               start: 'top 65%',
-              end: 'top 15%',
+              end: 'top 45%',
 
               scrub: 0.8,
 
@@ -230,7 +230,7 @@ const Benefits = () => {
               trigger: sectionRef.current,
 
               start: 'top 30%',
-              end: 'top 5%',
+              end: 'top 10%',
 
               scrub: 0.8,
 

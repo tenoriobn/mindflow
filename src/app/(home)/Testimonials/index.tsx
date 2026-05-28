@@ -40,8 +40,8 @@ const Testimonials = () => {
         scrollTrigger: {
           trigger: finalSection,
 
-          start: 'top 92%',
-          end: 'top 12%',
+          start: 'top 50%',
+          end: 'top 25%',
 
           scrub: 0.8,
 
