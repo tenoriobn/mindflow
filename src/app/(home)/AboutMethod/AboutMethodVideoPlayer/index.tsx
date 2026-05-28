@@ -1,57 +1,93 @@
 'use client';
-import '@videojs/react/video/skin.css';
+import { useRef } from 'react';
+import { gsap, useGSAP } from 'src/lib/gsap';
+import { useResponsiveIcons } from './useResponsiveIcons';
 import { createPlayer, videoFeatures } from '@videojs/react';
 import { VideoSkin, Video } from '@videojs/react/video';
+import '@videojs/react/video/skin.css';
 import './about-method-video-player.css';
-import { useEffect } from 'react';
-import { gsap, useGSAP } from 'src/lib/gsap';
-import { useRef } from 'react';
 
 const Player = createPlayer({
   features: videoFeatures,
 });
 
 const AboutMethodVideoPlayer = () => {
+  useResponsiveIcons();
   const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const icons = document.querySelectorAll('.media-icon');
-
-    icons.forEach((icon) => {
-      if (!icon.getAttribute('viewBox')) {
-        const width = icon.getAttribute('width');
-        const height = icon.getAttribute('height');
-
-        if (width && height) {
-          icon.setAttribute('viewBox', `0 0 ${width} ${height}`);
-        }
-      }
-    });
-  }, []);
 
   useGSAP(
     () => {
-      const aboutVideo = sectionRef.current?.querySelector('.about-video');
+      const section = sectionRef.current;
+
+      if (!section) {
+        return;
+      }
+
+      const aboutVideo = section.querySelector('.about-video');
 
       if (!aboutVideo) {
         return;
       }
 
+      gsap.set(aboutVideo, {
+        force3D: true,
+
+        backfaceVisibility: 'hidden',
+
+        transformPerspective: 1000,
+
+        transformOrigin: 'center center',
+
+        contain: 'layout paint style',
+
+        willChange: 'auto',
+      });
+
       gsap.fromTo(
         aboutVideo,
         {
           width: '50%',
-          filter: 'saturate(50%)',
+
+          autoAlpha: 0.85,
         },
         {
           width: '100%',
-          filter: 'saturate(110%)',
+
+          autoAlpha: 1,
+
           ease: 'none',
+
+          clearProps: 'willChange',
+
           scrollTrigger: {
             trigger: aboutVideo,
-            start: 'top 99%',
-            end: 'top 30%',
-            scrub: true,
+
+            start: 'top 85%',
+            end: 'top 70%',
+
+            scrub: 0.8,
+
+            invalidateOnRefresh: true,
+
+            fastScrollEnd: true,
+
+            onEnter: () => {
+              gsap.set(aboutVideo, {
+                willChange: 'width, opacity',
+              });
+            },
+
+            onLeave: () => {
+              gsap.set(aboutVideo, {
+                willChange: 'auto',
+              });
+            },
+
+            onLeaveBack: () => {
+              gsap.set(aboutVideo, {
+                willChange: 'width, opacity',
+              });
+            },
           },
         }
       );

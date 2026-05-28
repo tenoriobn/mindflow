@@ -78,35 +78,37 @@ const Benefits = () => {
 
       gsap.set(split.chars, {
         opacity: 0,
-        y: 40,
-        scale: 0.9,
-        filter: 'blur(12px)',
+        y: 24,
+
+        force3D: true,
+        willChange: 'transform, opacity',
       });
 
-      gsap.fromTo(
-        split.chars,
-        {
-          y: 40,
-          scale: 0.9,
-          filter: 'blur(12px)',
-        },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          filter: 'blur(0px)',
-          duration: 0.8,
-          ease: 'power3.out',
-          stagger: 0.03,
+      gsap.to(split.chars, {
+        opacity: 1,
+        y: 0,
 
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 95%',
-            end: 'top 40%',
-            scrub: true,
-          },
-        }
-      );
+        duration: 0.7,
+
+        stagger: 0.025,
+
+        ease: 'power2.out',
+
+        clearProps: 'willChange',
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+
+          start: 'top 85%',
+          end: 'top 55%',
+
+          scrub: 0.8,
+
+          invalidateOnRefresh: true,
+
+          fastScrollEnd: true,
+        },
+      });
 
       const mm = gsap.matchMedia();
 
@@ -116,22 +118,49 @@ const Benefits = () => {
       const lightCardsContent = gsap.utils.toArray<HTMLElement>('.benefit-card-light-content');
 
       mm.add('(min-width: 1024px)', () => {
+        gsap.set(cardsWrapper, {
+          force3D: true,
+          backfaceVisibility: 'hidden',
+          transformPerspective: 1000,
+        });
+
         gsap.fromTo(
           cardsWrapper,
           {
-            opacity: 0.5,
-            scale: 0.8,
+            opacity: 0.7,
+            scale: 0.94,
           },
           {
             opacity: 1,
             scale: 1,
+
             ease: 'none',
+
+            clearProps: 'willChange',
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 90%',
-              end: 'top 10%',
-              scrub: true,
+
+              start: 'top 85%',
+              end: 'top 50%',
+
+              scrub: 0.8,
+
+              invalidateOnRefresh: true,
+
+              fastScrollEnd: true,
+
+              onEnter: () => {
+                gsap.set(cardsWrapper, {
+                  willChange: 'transform, opacity',
+                });
+              },
+
+              onLeave: () => {
+                gsap.set(cardsWrapper, {
+                  willChange: 'auto',
+                });
+              },
             },
           }
         );
@@ -140,20 +169,42 @@ const Benefits = () => {
           lightCardsContent[0],
           {
             opacity: 0,
-            scale: 0.8,
-            filter: 'blur(12px)',
+            y: 24,
+            filter: 'blur(4px)',
           },
           {
             opacity: 1,
-            scale: 1,
-            ease: 'none',
+            y: 0,
+
             filter: 'blur(0px)',
+
+            ease: 'none',
+
+            clearProps: 'filter,willChange',
 
             scrollTrigger: {
               trigger: sectionRef.current,
+
               start: 'top 65%',
-              end: 'top 10%',
-              scrub: true,
+              end: 'top 45%',
+
+              scrub: 0.8,
+
+              invalidateOnRefresh: true,
+
+              fastScrollEnd: true,
+
+              onEnter: () => {
+                gsap.set(lightCardsContent[0], {
+                  willChange: 'transform, opacity, filter',
+                });
+              },
+
+              onLeave: () => {
+                gsap.set(lightCardsContent[0], {
+                  willChange: 'auto',
+                });
+              },
             },
           }
         );
@@ -162,20 +213,42 @@ const Benefits = () => {
           lightCardsContent[1],
           {
             opacity: 0,
-            scale: 0.85,
-            filter: 'blur(12px)',
+            y: 24,
+            filter: 'blur(4px)',
           },
           {
             opacity: 1,
-            scale: 1,
-            ease: 'none',
+            y: 0,
+
             filter: 'blur(0px)',
+
+            ease: 'none',
+
+            clearProps: 'filter,willChange',
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 20%',
-              end: 'top 5%',
-              scrub: true,
+
+              start: 'top 30%',
+              end: 'top 10%',
+
+              scrub: 0.8,
+
+              invalidateOnRefresh: true,
+
+              fastScrollEnd: true,
+
+              onEnter: () => {
+                gsap.set(lightCardsContent[1], {
+                  willChange: 'transform, opacity, filter',
+                });
+              },
+
+              onLeave: () => {
+                gsap.set(lightCardsContent[1], {
+                  willChange: 'auto',
+                });
+              },
             },
           }
         );
@@ -183,23 +256,51 @@ const Benefits = () => {
 
       mm.add('(max-width: 1023px)', () => {
         [...darkCards, ...lightCards].forEach((card) => {
+          gsap.set(card, {
+            force3D: true,
+            backfaceVisibility: 'hidden',
+          });
+
           gsap.fromTo(
             card,
             {
               opacity: 0,
-              scale: 0.85,
-              filter: 'blur(12px)',
+              y: 20,
+              filter: 'blur(4px)',
             },
             {
-              filter: 'blur(0px)',
               opacity: 1,
-              scale: 1,
+              y: 0,
+
+              filter: 'blur(0px)',
+
               ease: 'none',
+
+              clearProps: 'filter,willChange',
+
               scrollTrigger: {
                 trigger: card,
-                start: 'top 80%',
+
+                start: 'top 82%',
                 end: 'top 65%',
-                scrub: true,
+
+                scrub: 0.8,
+
+                invalidateOnRefresh: true,
+
+                fastScrollEnd: true,
+
+                onEnter: () => {
+                  gsap.set(card, {
+                    willChange: 'transform, opacity, filter',
+                  });
+                },
+
+                onLeave: () => {
+                  gsap.set(card, {
+                    willChange: 'auto',
+                  });
+                },
               },
             }
           );
@@ -208,6 +309,7 @@ const Benefits = () => {
 
       return () => {
         split.revert();
+        mm.revert();
       };
     },
     {

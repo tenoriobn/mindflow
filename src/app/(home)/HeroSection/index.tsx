@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import PartnerLogoCarousel from './PartnerLogoCarousel';
 import { useRef } from 'react';
-import { gsap, SplitText, useGSAP } from 'src/lib/gsap';
+import { gsap, useGSAP } from 'src/lib/gsap';
 import './hero-section.css';
 
 const HeroSection = () => {
@@ -17,131 +17,118 @@ const HeroSection = () => {
         return;
       }
 
-      gsap.to(heroSection, {
-        y: '100vh',
-        scale: 0.5,
-        filter: 'blur(12px)',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: aboutSection,
-          start: 'top 99%',
-          end: 'top 10%',
-          scrub: true,
-        },
-      });
-
-      const title = heroSection.querySelector('.hero-title');
-      const description = heroSection.querySelector('.hero-description');
-      const button = heroSection.querySelector('.hero-button');
+      const heroContent = heroSection.querySelector('.hero-content');
       const heroImage = heroSection.querySelector('.hero-image');
-      const partnerLogos = document.querySelectorAll('.partner-logo-item');
+      const partnerWrapper = heroSection.querySelectorAll('.partner-mask');
 
-      if (!title || !description || !button || !heroImage || !partnerLogos.length) {
+      if (!heroContent || !heroImage || !partnerWrapper.length) {
         return;
       }
 
-      const splitTitle = SplitText.create(title, {
-        type: 'words',
-        mask: 'words',
+      gsap.set(heroSection, {
+        transformOrigin: 'center center',
+        force3D: true,
       });
 
-      const splitDescription = SplitText.create(description, {
-        type: 'words',
-        mask: 'words',
+      gsap.set([heroImage, heroContent, partnerWrapper], {
+        force3D: true,
+        backfaceVisibility: 'hidden',
       });
 
-      gsap.set([title, description], {
-        visibility: 'visible',
+      gsap.to(heroSection, {
+        yPercent: 82,
+        scale: 0.92,
+
+        opacity: 0.35,
+        filter: 'blur(4px)',
+
+        ease: 'none',
+
+        scrollTrigger: {
+          trigger: aboutSection,
+
+          start: 'top 95%',
+          end: 'top 70%',
+
+          scrub: 0.8,
+
+          invalidateOnRefresh: true,
+
+          onEnter: () => {
+            gsap.set(heroSection, {
+              willChange: 'transform, opacity',
+            });
+          },
+
+          onLeaveBack: () => {
+            gsap.set(heroSection, {
+              willChange: 'auto',
+            });
+          },
+        },
       });
 
       const tl = gsap.timeline({
         defaults: {
-          ease: 'power4.out',
+          ease: 'power3.out',
         },
       });
 
       tl.fromTo(
         heroImage,
         {
-          scale: 1.15,
+          scale: 1.08,
           opacity: 0,
-          filter: 'blur(12px)',
         },
         {
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
-          duration: 1.2,
+
+          duration: 1,
+
+          clearProps: 'transform',
         }
       )
+
         .fromTo(
-          splitTitle.words,
+          heroContent,
           {
-            yPercent: 120,
+            y: 24,
             opacity: 0,
-          },
-          {
-            yPercent: 0,
-            opacity: 1,
-            stagger: 0.03,
-            duration: 0.8,
-          },
-          '-=0.65'
-        )
-        .fromTo(
-          splitDescription.words,
-          {
-            yPercent: 120,
-            opacity: 0,
-          },
-          {
-            yPercent: 0,
-            opacity: 1,
-            stagger: 0.015,
-            duration: 0.6,
-            ease: 'power3.out',
-          },
-          '-=0.45'
-        )
-        .fromTo(
-          button,
-          {
-            y: 30,
-            opacity: 0,
-            scale: 0.95,
-            filter: 'blur(8px)',
+            filter: 'blur(6px)',
           },
           {
             y: 0,
             opacity: 1,
-            scale: 1,
             filter: 'blur(0px)',
-            duration: 0.5,
-            ease: 'power3.out',
+
+            duration: 0.9,
+
+            clearProps: 'filter',
           },
-          '-=0.3'
+          '-=0.65'
         )
+
         .fromTo(
-          partnerLogos,
+          partnerWrapper,
           {
+            y: 18,
             opacity: 0,
-            scale: 0.75,
-            filter: 'blur(12px)',
           },
           {
+            y: 0,
             opacity: 1,
-            scale: 1,
-            filter: 'blur(0px)',
-            duration: 0.5,
-            stagger: 0.04,
-            ease: 'power3.out',
+
+            duration: 0.65,
+            stagger: 0.05,
+            ease: 'power2.out',
+
+            clearProps: 'transform',
           },
-          '-=0.6'
+          '-=0.5'
         );
     },
-    {
-      scope: sectionRef,
-    }
+    { scope: sectionRef }
   );
 
   return (
@@ -175,17 +162,17 @@ const HeroSection = () => {
         />
 
         <header
-          className="hero-content relative z-10 grid"
+          className="hero-content relative z-10 grid opacity-0"
           style={{ gridTemplateColumns: 'min-content' }}
         >
           <h2
             id="hero-section-title"
-            className="hero-title 3xl:text-[4.8vw] 3xl:mb-[1.667vw] invisible mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
+            className="3xl:text-[4.8vw] 3xl:mb-[1.667vw] mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
           >
             Liberte sua mente.
           </h2>
 
-          <p className="hero-description 3xl:text-[1.46vw] 3xl:mb-[3.334vw] invisible mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
+          <p className="3xl:text-[1.46vw] 3xl:mb-[3.334vw] mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
             <span className="font-medium">Descubra o Método MindFlow:</span> um treinamento online
             que combina neurociência, design e produtividade para te ajudar a ter foco e resultados,
             sem estresse e sem fórmulas mágicas.
@@ -193,7 +180,7 @@ const HeroSection = () => {
 
           <button
             type="button"
-            className="hero-button bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 opacity-0 active:scale-90 max-md:w-full md:px-16"
+            className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
           >
             Entrar na Lista VIP
           </button>

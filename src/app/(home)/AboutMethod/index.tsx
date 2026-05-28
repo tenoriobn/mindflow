@@ -14,42 +14,68 @@ const AboutMethod = () => {
 
   useGSAP(
     () => {
-      if (!sectionRef.current) {
+      const section = sectionRef.current;
+
+      if (!section) {
         return;
       }
 
-      const title = sectionRef.current.querySelector('.about-title');
-      const description = sectionRef.current.querySelector('.about-description');
+      const title = section.querySelector('.about-title');
+      const description = section.querySelector('.about-description');
 
       if (!title || !description) {
         return;
       }
 
+      gsap.set([title, description], {
+        force3D: true,
+        backfaceVisibility: 'hidden',
+        willChange: 'clip-path',
+      });
+
       const tl = gsap.timeline({
+        defaults: {
+          ease: 'power2.out',
+        },
+
         scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 95%',
-          end: 'top 40%',
-          scrub: true,
+          trigger: section,
+
+          start: 'top 75%',
+          end: 'top 50%',
+
+          scrub: 0.8,
+
+          invalidateOnRefresh: true,
+
+          onLeave: () => {
+            gsap.set([title, description], {
+              willChange: 'auto',
+            });
+          },
+
+          onLeaveBack: () => {
+            gsap.set([title, description], {
+              willChange: 'clip-path',
+            });
+          },
         },
       });
 
       tl.to(title, {
         opacity: 1,
         clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
-        filter: 'none',
-        ease: 'power3.out',
-        duration: 1,
+
+        clearProps: 'willChange',
       }).to(
         description,
         {
           opacity: 1,
           clipPath: 'polygon(0% 0%,100% 0%,100% 100%,0% 100%)',
-          filter: 'none',
-          ease: 'power2.out',
-          duration: 0.8,
+
+          clearProps: 'willChange',
         },
-        0.3
+        0.2
       );
     },
     {

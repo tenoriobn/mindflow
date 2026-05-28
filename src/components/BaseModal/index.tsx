@@ -46,21 +46,28 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
         return;
       }
 
-      const contentBlocks = modal.querySelectorAll('.modal-content > *');
-
       gsap.set(overlay, {
         opacity: 0,
       });
 
       gsap.set(modal, {
         opacity: 0,
-        scale: 0.96,
-        y: 20,
-        filter: 'blur(12px)',
+
+        y: 10,
+        scale: 0.985,
+
+        force3D: true,
+        backfaceVisibility: 'hidden',
+        willChange: 'transform, opacity',
       });
 
       const tl = gsap.timeline({
         paused: true,
+
+        defaults: {
+          overwrite: 'auto',
+        },
+
         onReverseComplete: () => {
           setShouldRender(false);
         },
@@ -68,7 +75,9 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
 
       tl.to(overlay, {
         opacity: 1,
-        duration: 0.18,
+
+        duration: 0.14,
+
         ease: 'power2.out',
       });
 
@@ -76,12 +85,15 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
         modal,
         {
           opacity: 1,
-          scale: 1,
+
           y: 0,
-          filter: 'blur(0px)',
-          duration: 0.42,
+          scale: 1,
+
+          duration: 0.24,
+
           ease: 'power3.out',
-          clearProps: 'filter',
+
+          clearProps: 'willChange',
         },
         0
       );
@@ -90,23 +102,26 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
         '.modal-header',
         {
           opacity: 0,
-          y: -12,
-          duration: 0.22,
+          y: -6,
+
+          duration: 0.16,
+
           ease: 'power2.out',
         },
-        0.08
+        0.04
       );
 
       tl.from(
-        contentBlocks,
+        '.modal-content',
         {
           opacity: 0,
-          y: 10,
-          stagger: 0.03,
-          duration: 0.18,
+          y: 6,
+
+          duration: 0.16,
+
           ease: 'power2.out',
         },
-        0.12
+        0.08
       );
 
       timelineRef.current = tl;
@@ -115,7 +130,9 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
     },
     {
       scope: modalRef,
+
       dependencies: [shouldRender],
+
       revertOnUpdate: true,
     }
   );
@@ -140,7 +157,7 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
   return createPortal(
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 grid items-center justify-center overflow-auto bg-black/65 p-4 backdrop-blur-sm md:p-8"
+      className="fixed inset-0 z-50 grid items-center justify-center overflow-auto bg-black/65 p-4 backdrop-blur-[2px] md:p-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby={ariaLabelledby}

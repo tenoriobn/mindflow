@@ -19,16 +19,53 @@ const Testimonials = () => {
         return;
       }
 
+      gsap.set(testimonials, {
+        force3D: true,
+        backfaceVisibility: 'hidden',
+        transformPerspective: 1000,
+        transformOrigin: 'center center',
+      });
+
       gsap.to(testimonials, {
-        y: '100vh',
-        scale: 0.8,
-        opacity: 0,
+        yPercent: 65,
+
+        scale: 0.92,
+
+        autoAlpha: 0.35,
+
         ease: 'none',
+
+        clearProps: 'willChange',
+
         scrollTrigger: {
           trigger: finalSection,
-          start: 'top 90%',
-          end: 'top 10%',
-          scrub: true,
+
+          start: 'top 50%',
+          end: 'top 25%',
+
+          scrub: 0.8,
+
+          invalidateOnRefresh: true,
+
+          fastScrollEnd: true,
+
+          onEnter: () => {
+            gsap.set(testimonials, {
+              willChange: 'transform, opacity',
+            });
+          },
+
+          onLeave: () => {
+            gsap.set(testimonials, {
+              willChange: 'auto',
+            });
+          },
+
+          onLeaveBack: () => {
+            gsap.set(testimonials, {
+              willChange: 'transform, opacity',
+            });
+          },
         },
       });
 
@@ -43,56 +80,89 @@ const Testimonials = () => {
 
       gsap.set(split.chars, {
         opacity: 0,
-        transformPerspective: 200,
-        transformStyle: 'preserve-3d',
+        y: 20,
+
+        force3D: true,
         backfaceVisibility: 'hidden',
+        willChange: 'transform, opacity',
       });
 
-      gsap.fromTo(
-        split.chars,
-        {
-          y: 20,
-          autoAlpha: 0,
-        },
-        {
-          y: 0,
-          autoAlpha: 1,
-          duration: 1.2,
-          ease: 'power2.out',
-          stagger: -0.05,
+      gsap.to(split.chars, {
+        opacity: 1,
+        y: 0,
 
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 95%',
-            end: 'top 40%',
-            scrub: true,
-          },
-        }
-      );
+        duration: 0.7,
+
+        stagger: -0.03,
+
+        ease: 'power2.out',
+
+        clearProps: 'willChange',
+
+        scrollTrigger: {
+          trigger: sectionRef.current,
+
+          start: 'top 90%',
+          end: 'top 55%',
+
+          scrub: 0.8,
+
+          invalidateOnRefresh: true,
+
+          fastScrollEnd: true,
+        },
+      });
 
       const testimonialsWrapper = sectionRef.current?.querySelector('.testimonials-fade-container');
 
       const testimonialColumns = gsap.utils.toArray<HTMLElement>('.testimonials-mask');
 
       if (testimonialsWrapper) {
+        gsap.set(testimonialsWrapper, {
+          force3D: true,
+          backfaceVisibility: 'hidden',
+          transformPerspective: 1000,
+        });
+
         gsap.fromTo(
           testimonialsWrapper,
           {
             opacity: 0,
-            rotateY: -12,
-            transformPerspective: 1200,
-            transformOrigin: 'left center',
+            rotateY: -6,
+            y: 24,
           },
           {
             opacity: 1,
             rotateY: 0,
+            y: 0,
+
             ease: 'none',
+
+            clearProps: 'willChange',
 
             scrollTrigger: {
               trigger: sectionRef.current,
-              start: 'top 95%',
-              end: 'top 35%',
-              scrub: true,
+
+              start: 'top 92%',
+              end: 'top 40%',
+
+              scrub: 0.8,
+
+              invalidateOnRefresh: true,
+
+              fastScrollEnd: true,
+
+              onEnter: () => {
+                gsap.set(testimonialsWrapper, {
+                  willChange: 'transform, opacity',
+                });
+              },
+
+              onLeave: () => {
+                gsap.set(testimonialsWrapper, {
+                  willChange: 'auto',
+                });
+              },
             },
           }
         );
@@ -102,71 +172,109 @@ const Testimonials = () => {
         testimonialColumns[0],
         {
           opacity: 0,
-          y: 40,
-          filter: 'blur(12px)',
+          y: 24,
+          filter: 'blur(4px)',
         },
         {
           opacity: 1,
           y: 0,
+
           filter: 'blur(0px)',
+
           ease: 'none',
+
+          clearProps: 'filter,willChange',
 
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 90%',
-            end: 'top 30%',
-            scrub: true,
+
+            start: 'top 88%',
+            end: 'top 40%',
+
+            scrub: 0.8,
+
+            invalidateOnRefresh: true,
+
+            fastScrollEnd: true,
+
+            onEnter: () => {
+              gsap.set(testimonialColumns[0], {
+                willChange: 'transform, opacity, filter',
+              });
+            },
+
+            onLeave: () => {
+              gsap.set(testimonialColumns[0], {
+                willChange: 'auto',
+              });
+            },
           },
         }
       );
 
-      if (testimonialColumns[1]) {
-        gsap.fromTo(
-          testimonialColumns[1],
-          {
-            opacity: 0,
-            y: 50,
-            filter: 'blur(12px)',
+      gsap.fromTo(
+        testimonialColumns[1],
+        {
+          opacity: 0,
+          y: 32,
+          filter: 'blur(4px)',
+        },
+        {
+          opacity: 1,
+          y: 0,
+
+          filter: 'blur(0px)',
+
+          ease: 'none',
+
+          clearProps: 'filter,willChange',
+
+          scrollTrigger: {
+            trigger: sectionRef.current,
+
+            start: 'top 82%',
+            end: 'top 35%',
+
+            scrub: 0.8,
+
+            invalidateOnRefresh: true,
+
+            fastScrollEnd: true,
           },
-          {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            ease: 'none',
+        }
+      );
 
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 80%',
-              end: 'top 25%',
-              scrub: true,
-            },
-          }
-        );
-      }
+      gsap.fromTo(
+        testimonialColumns[2],
+        {
+          opacity: 0,
+          y: 40,
+          filter: 'blur(4px)',
+        },
+        {
+          opacity: 1,
+          y: 0,
 
-      if (testimonialColumns[2]) {
-        gsap.fromTo(
-          testimonialColumns[2],
-          {
-            opacity: 0,
-            y: 60,
-            filter: 'blur(12px)',
+          filter: 'blur(0px)',
+
+          ease: 'none',
+
+          clearProps: 'filter,willChange',
+
+          scrollTrigger: {
+            trigger: sectionRef.current,
+
+            start: 'top 76%',
+            end: 'top 30%',
+
+            scrub: 0.8,
+
+            invalidateOnRefresh: true,
+
+            fastScrollEnd: true,
           },
-          {
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            ease: 'none',
-
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 75%',
-              end: 'top 20%',
-              scrub: true,
-            },
-          }
-        );
-      }
+        }
+      );
 
       return () => {
         split.revert();
