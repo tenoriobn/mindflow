@@ -1,13 +1,111 @@
-import Link from 'next/link';
 import { MENU_LINKS } from './menuLinks';
-import CloseIcon from 'public/icons/close.svg';
 import type { NavbarProps } from './navbar.type';
-import Logo from '../Logo';
 import CTAButton from '../CTAButton';
-import MenuToggleButton from '../MenuToggleButton';
+import { useEffect, useRef } from 'react';
+import { useGSAP, gsap } from 'src/lib/gsap';
 
 const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
+  const navRef = useRef<HTMLElement>(null);
+  const timelineRef = useRef<GSAPTimeline | null>(null);
   const activeHref = MENU_LINKS[0].href;
+
+  const handleScrollToSection = (href: string) => {
+    gsap.to(window, {
+      duration: 1.2,
+
+      scrollTo: {
+        y: href,
+        offsetY: 0,
+      },
+
+      ease: 'power3.inOut',
+    });
+
+    setIsMenuActive(false);
+  };
+
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+
+    mm.add('(max-width: 1279px)', () => {
+      const nav = navRef.current;
+
+      if (!nav) {
+        return;
+      }
+
+      const menuItems = nav.querySelectorAll('li');
+
+      gsap.set(nav, {
+        y: -12,
+        scale: 0.96,
+
+        transformOrigin: 'top right',
+
+        force3D: true,
+        backfaceVisibility: 'hidden',
+      });
+
+      gsap.set(menuItems, {
+        opacity: 0,
+        y: -8,
+      });
+
+      const tl = gsap.timeline({
+        paused: true,
+      });
+
+      tl.to(nav, {
+        autoAlpha: 1,
+
+        y: 0,
+        scale: 1,
+
+        pointerEvents: 'auto',
+
+        duration: 0.55,
+
+        ease: 'elastic.out(1, 0.75)',
+
+        easeReverse: 'power2.out',
+      }).to(
+        menuItems,
+        {
+          opacity: 1,
+          y: 0,
+
+          stagger: 0.04,
+
+          duration: 0.3,
+
+          ease: 'power2.out',
+
+          easeReverse: 'power2.out',
+        },
+        0.08
+      );
+
+      timelineRef.current = tl;
+    });
+
+    return () => {
+      mm.revert();
+    };
+  }, []);
+
+  useEffect(() => {
+    const tl = timelineRef.current;
+
+    if (!tl) {
+      return;
+    }
+
+    if (isMenuActive) {
+      tl.timeScale(1).play();
+    } else {
+      tl.timeScale(2.2).reverse();
+    }
+  }, [isMenuActive]);
 
   return (
     <>
@@ -15,46 +113,41 @@ const Navbar = ({ isMenuActive, setIsMenuActive }: NavbarProps) => {
         type="button"
         tabIndex={-1}
         onClick={() => setIsMenuActive(false)}
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity xl:hidden ${isMenuActive ? 'visible opacity-100' : 'invisible opacity-0'} `}
+        className={`fixed inset-0 transition-opacity duration-300 xl:hidden ${isMenuActive ? 'visible opacity-100' : 'invisible hidden opacity-0'} `}
       />
 
       <nav
+        ref={navRef}
         id="primary-navigation"
         aria-label="Navegação principal"
-        className={`max-xl:bg-gradient-header max-xl:fixed max-xl:top-0 max-xl:right-0 max-xl:z-50 max-xl:grid max-xl:h-dvh max-xl:grid-rows-[3.75rem_1fr_3.75rem] max-xl:gap-16 max-xl:overflow-auto max-xl:bg-slate-950 max-xl:p-4 max-xl:transition-transform max-xl:duration-300 max-sm:w-full sm:max-md:w-[20rem] md:max-xl:p-8 md:max-lg:w-93 lg:max-xl:w-133 ${isMenuActive ? 'max-xl:translate-x-0' : 'max-xl:translate-x-full'} `}
+        className="max-xl:bg-gradient-header 3xl:rounded-[2.083vw] w-max rounded-[1.25rem] max-xl:pointer-events-none max-xl:invisible max-xl:absolute max-xl:top-19 max-xl:right-0 max-xl:z-50 max-xl:flex max-xl:overflow-auto max-xl:bg-slate-950 max-xl:p-4 max-xl:opacity-0 max-xl:shadow-lg/35 max-md:top-17 md:rounded-[2.5rem] md:max-xl:p-8"
       >
-        <div className="flex items-center justify-between gap-4 rounded-full border border-slate-300/5 p-3 pl-4 md:gap-8 xl:hidden">
-          <Logo />
-
-          <MenuToggleButton
-            icon={CloseIcon}
-            iconClassName="w-5 h-3.5 "
-            aria-label="Fechar menu de navegação"
-            aria-expanded={isMenuActive}
-            onClick={() => setIsMenuActive(false)}
-          />
-        </div>
-
         <ul className="3xl:gap-[1.667vw] flex items-center justify-center gap-4 max-xl:flex-col md:gap-8">
           {MENU_LINKS.map(({ label, href }) => {
             const isActive = activeHref === href;
 
             return (
               <li key={href}>
-                <Link
-                  href={href}
+                <button
+                  type="button"
                   aria-current={isActive ? 'page' : undefined}
-                  onClick={() => setIsMenuActive(false)}
-                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${isActive ? 'font-medium text-white/95' : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'} `}
+                  onClick={() => handleScrollToSection(href)}
+                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${
+                    isActive
+                      ? 'font-medium text-white/95'
+                      : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'
+                  } `}
                 >
                   {label}
-                </Link>
+                </button>
               </li>
             );
           })}
-        </ul>
 
-        <CTAButton className="self-end justify-self-center xl:hidden">Começar agora</CTAButton>
+          <li>
+            <CTAButton className="self-end justify-self-center xl:hidden">Começar agora</CTAButton>
+          </li>
+        </ul>
       </nav>
     </>
   );
