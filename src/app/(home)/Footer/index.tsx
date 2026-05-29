@@ -161,12 +161,12 @@ const Footer = () => {
               {FOOTER_BUTTONS.map(({ label, key }) => (
                 <li
                   key={key}
-                  className="footer-button-item relative flex items-center first:before:hidden md:before:absolute md:before:top-1/2 md:before:-left-4 md:before:h-1.5 md:before:w-1.5 md:before:-translate-y-1/2 md:before:rounded-full md:before:bg-white/75"
+                  className="footer-button-item 3xl:before:left-[-1.042vw] 3xl:before:w-[.313vw] 3xl:before:h-[.313vw] relative flex items-center first:before:hidden md:before:absolute md:before:top-1/2 md:before:-left-5 md:before:h-1.5 md:before:w-1.5 md:before:-translate-y-1/2 md:before:rounded-full md:before:bg-white/75"
                 >
                   <button
                     type="button"
                     onClick={() => setActiveModal(key)}
-                    className="3xl:text-[1.46vw] transition-default transform-[translateZ(0)] text-center text-lg font-medium text-white/75 backface-hidden hover:text-white/95 active:scale-90 active:text-white md:text-2xl"
+                    className="3xl:text-[1.042vw] transition-default transform-[translateZ(0)] text-center text-lg font-medium text-white/75 backface-hidden hover:text-white/95 active:scale-90 active:text-white md:text-2xl"
                   >
                     {label}
                   </button>
@@ -177,7 +177,7 @@ const Footer = () => {
 
           <hr className="3xl:my-[1.667vw] my-4 h-px w-full border-0 bg-white/12 md:my-8" />
 
-          <small className="footer-copyright 3xl:text-[1.46vw] transform-[translateZ(0)] text-center text-lg text-white opacity-0 md:text-2xl">
+          <small className="footer-copyright 3xl:text-[1.042vw] transform-[translateZ(0)] text-center text-lg text-white opacity-0 md:text-2xl">
             © {new Date().getFullYear()} MindFlow.
             <br className="md:hidden" /> Todos os direitos reservados
           </small>

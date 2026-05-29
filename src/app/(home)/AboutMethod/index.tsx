@@ -100,7 +100,7 @@ const AboutMethod = () => {
 
         <SectionDescription
           id="about-method-description"
-          className="about-description 3xl:w-[70vw] xs:w-[82vw] mx-0 w-[80vw] text-center text-white/90 opacity-0 [clip-path:polygon(50%_0%,50%_0%,50%_100%,50%_100%)] md:w-131.5 lg:w-181 xl:w-240.5"
+          className="about-description 3xl:w-[50.5vw] xs:w-[82vw] mx-0 w-[80vw] text-center text-white/90 opacity-0 [clip-path:polygon(50%_0%,50%_0%,50%_100%,50%_100%)] md:w-131.5 lg:w-181 xl:w-240.5"
         >
           Sistema de organização mental que une neurociência e ferramentas digitais simples. Em 4
           módulos, o aluno aprende a estruturar uma rotina leve, entender sua mente e usar

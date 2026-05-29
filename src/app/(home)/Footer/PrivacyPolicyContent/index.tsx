@@ -21,7 +21,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-information-collected"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           1. Informações coletadas
         </h3>
@@ -32,7 +32,7 @@ const PrivacyPolicyContent = () => {
             usuário, como:
           </SectionDescription>
 
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Nome;</li>
             <li>Endereço de e-mail;</li>
             <li>Telefone (quando informado);</li>
@@ -46,7 +46,7 @@ const PrivacyPolicyContent = () => {
             Também podem ser coletadas informações automaticamente, incluindo:
           </SectionDescription>
 
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Endereço IP;</li>
             <li>Tipo de navegador;</li>
             <li>Dispositivo utilizado;</li>
@@ -65,7 +65,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-how-we-use-your-information"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           2. Como utilizamos suas informações
         </h3>
@@ -75,7 +75,7 @@ const PrivacyPolicyContent = () => {
             As informações coletadas são utilizadas para:
           </SectionDescription>
 
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Entrar em contato com você;</li>
             <li>Enviar conteúdos, novidades e comunicações relacionadas ao MindFlow;</li>
             <li>Melhorar a experiência de navegação;</li>
@@ -99,7 +99,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-data-sharing"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           3. Compartilhamento de dados
         </h3>
@@ -110,7 +110,7 @@ const PrivacyPolicyContent = () => {
             plataforma, como:
           </SectionDescription>
 
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Plataformas de e-mail marketing;</li>
             <li>Ferramentas de análise e métricas;</li>
             <li>Serviços de hospedagem e infraestrutura;</li>
@@ -132,7 +132,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-cookie-usage"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           4. Uso de cookies
         </h3>
@@ -156,7 +156,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-information-security"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           5. Segurança das informações
         </h3>
@@ -180,7 +180,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-user-rights"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           6. Direitos do usuário
         </h3>
@@ -190,7 +190,7 @@ const PrivacyPolicyContent = () => {
             Você pode, a qualquer momento:
           </SectionDescription>
 
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Solicitar acesso aos seus dados;</li>
             <li>Corrigir informações incorretas;</li>
             <li>Solicitar a exclusão dos seus dados;</li>
@@ -213,7 +213,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-external-links"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           7. Links externos
         </h3>
@@ -233,7 +233,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-policy-changes"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           8. Alterações nesta política
         </h3>
@@ -256,7 +256,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-contact"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           9. Contato
         </h3>
@@ -275,7 +275,7 @@ const PrivacyPolicyContent = () => {
       >
         <h3
           id="privacy-policy-consent"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           10. Consentimento
         </h3>

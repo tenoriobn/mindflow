@@ -18,9 +18,9 @@ const backgroundCardBase = 'bg-cover bg-top';
 const contentBase =
   '3xl:p-[1.667vw] 3xl:rounded-[2.083vw] 3xl:gap-[1.667vw] relative flex h-full flex-col justify-end gap-4 rounded-[1.25rem] p-4 md:gap-8 md:rounded-[2.5rem] md:p-8';
 
-const titleBase = '3xl:text-[1.667vw] text-lg font-semibold text-white/95 md:text-2xl';
+const titleBase = '3xl:text-[1.25vw] text-lg font-semibold text-white/95 md:text-2xl';
 
-const descriptionBase = '3xl:text-[1.46vw] text-base text-white/75 md:text-xl';
+const descriptionBase = '3xl:text-[1.042vw] text-base text-white/75 md:text-xl';
 
 const benefits = [
   {

@@ -88,19 +88,6 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
     }
   }, [isMenuActive]);
 
-  const navClassName = isDropdownOnly
-    ? `bg-gradient-header 3xl:rounded-[2.083vw] pointer-events-none invisible absolute 
-       top-19 right-0 z-50 flex w-max overflow-auto rounded-[1.25rem] bg-slate-950 p-4 
-       opacity-0 shadow-lg/35 max-md:top-17 md:rounded-[2.5rem] md:p-8`
-    : `max-xl:bg-gradient-header 3xl:rounded-[2.083vw] w-max rounded-[1.25rem] 
-       max-xl:pointer-events-none max-xl:invisible max-xl:absolute max-xl:top-19 max-xl:right-0 
-       max-xl:z-50 max-xl:flex max-xl:overflow-auto max-xl:bg-slate-950 max-xl:p-4 
-       max-xl:opacity-0 max-xl:shadow-lg/35 max-md:top-17 md:rounded-[2.5rem] md:max-xl:p-8`;
-
-  const listClassName = isDropdownOnly
-    ? `3xl:gap-[1.667vw] flex flex-col items-center justify-center gap-4 md:gap-8`
-    : `3xl:gap-[1.667vw] flex items-center justify-center gap-4 max-xl:flex-col md:gap-8`;
-
   return (
     <>
       <button
@@ -114,9 +101,19 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
         ref={navRef}
         id="primary-navigation"
         aria-label="Navegação principal"
-        className={navClassName}
+        className={
+          isDropdownOnly
+            ? `bg-gradient-header 3xl:rounded-[2.083vw] 3xl:top-[4.375vw] 3xl:p-[1.667vw] pointer-events-none invisible absolute top-18 right-0 z-50 flex w-max overflow-auto rounded-[1.25rem] bg-slate-950 p-4 opacity-0 shadow-lg/35 md:top-21 md:rounded-[2.5rem] md:p-8`
+            : `max-xl:bg-gradient-header 3xl:rounded-[2.083vw] w-max rounded-[1.25rem] max-xl:pointer-events-none max-xl:invisible max-xl:absolute max-xl:top-19 max-xl:right-0 max-xl:z-50 max-xl:flex max-xl:overflow-auto max-xl:bg-slate-950 max-xl:p-4 max-xl:opacity-0 max-xl:shadow-lg/35 max-md:top-17 md:rounded-[2.5rem] md:max-xl:p-8`
+        }
       >
-        <ul className={listClassName}>
+        <ul
+          className={
+            isDropdownOnly
+              ? `3xl:gap-[1.667vw] flex flex-col items-center justify-center gap-4 md:gap-8`
+              : `3xl:gap-[1.667vw] flex items-center justify-center gap-4 max-xl:flex-col md:gap-8`
+          }
+        >
           {MENU_LINKS.map(({ label, href }) => {
             const isActive = activeHref === href;
             return (
@@ -125,7 +122,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
                   type="button"
                   aria-current={isActive ? 'page' : undefined}
                   onClick={() => handleScrollToSection(href)}
-                  className={`transition-default 3xl:text-[1.46vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${
+                  className={`transition-default 3xl:text-[1.042vw] inline-block text-[clamp(1rem,3vw,1.25rem)] ${
                     isActive
                       ? 'font-medium text-white/95'
                       : 'text-white/50 hover:text-white/75 active:scale-90 active:text-white/90'
@@ -137,7 +134,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
             );
           })}
 
-          <li>
+          <li className="inline-flex">
             <CTALink
               onClick={() => setIsMenuActive(false)}
               className={`self-end justify-self-center ${!isDropdownOnly ? 'xl:hidden' : ''}`}

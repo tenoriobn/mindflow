@@ -89,14 +89,15 @@ const HeaderFixed = () => {
         ref={headerRef}
         className="3xl:right-[4.375vw] 3xl:top-[1.667vw] fixed top-4 right-4 isolate z-50 rounded-full shadow-lg/35 md:top-8 md:right-8 2xl:right-21"
       >
-        <div className="3xl:p-[.625vw] relative flex items-center justify-center rounded-full bg-[rgba(46,46,76,0.87)] p-3 md:p-4">
+        <div className="3xl:p-[.834vw] relative flex items-center justify-center rounded-full bg-[rgba(46,46,76,0.87)] p-3 md:p-4">
           <MenuToggleButton
             isMenuActive={isMenuActive}
             Icon={isMenuActive ? CloseIcon : MenuIcon}
-            iconClassName={isMenuActive ? 'h-3.5 w-5' : ''}
+            iconClassName={isMenuActive ? 'h-3.5 3xl:h-[.73vw]' : 'h-3 3xl:h-[.625vw]'}
             aria-label="Abrir menu de navegação"
             aria-expanded={isMenuActive}
             onClick={() => setIsMenuActive((prev) => !prev)}
+            className="3xl:h-[1.875vw] 3xl:w-[1.875vw]"
           />
 
           <Navbar

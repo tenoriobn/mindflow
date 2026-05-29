@@ -26,7 +26,7 @@ export default function Home() {
             <Benefits />
             <Testimonials />
 
-            <div className="final-section bg-gradient-header 3xl:rounded-t-[2.083vw] relative z-20 rounded-t-[1.25rem] rounded-br-[2.5rem] bg-slate-950 will-change-transform md:rounded-t-[2.5rem]">
+            <div className="final-section bg-gradient-header 3xl:rounded-t-[2.083vw] 3xl:rounded-br-[3.5vw] relative z-20 rounded-t-[1.25rem] rounded-br-[2.5rem] bg-slate-950 will-change-transform md:rounded-t-[2.5rem]">
               <BonusCTA />
               <FAQ />
               <BrandSignature />

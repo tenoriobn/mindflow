@@ -318,7 +318,7 @@ const Testimonials = () => {
                     <li key={`${id}-${index}`}>
                       <article className="3xl:rounded-[2.083vw] 3xl:p-[1.667vw] 3xl:gap-[1.667vw] transition-default flex flex-col gap-8 rounded-[1.25rem] bg-slate-200/80 p-4 text-slate-950/45 select-none hover:bg-slate-950/10 md:rounded-[2.5rem] md:p-8">
                         <blockquote>
-                          <p className="3xl:text-[1.46vw] text-xl font-medium italic md:text-2xl">
+                          <p className="3xl:text-[1.042vw] text-xl font-medium italic md:text-2xl">
                             {quote}
                           </p>
                         </blockquote>

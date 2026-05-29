@@ -247,11 +247,11 @@ const BonusCTA = () => {
           rel="noopener noreferrer"
           href="https://wa.me/5511999999999?text=Olá!%20Quero%20entrar%20na%20Lista%20VIP%20do%20MindFlow%20e%20garantir%20os%20bônus%20exclusivos%20do%20lançamento."
           aria-describedby="bonus-cta-description"
-          className="bonus-button bg-gradient-button bg-gradient-button-secondary 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex w-full items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 opacity-0 active:scale-90! max-lg:self-center md:max-w-max md:px-16"
+          className="bonus-button bg-gradient-button bg-gradient-button-secondary 3xl:text-[1.042vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex w-full items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 opacity-0 active:scale-90! max-lg:self-center md:max-w-max md:px-16"
         >
           <DiamondIcon
             aria-hidden="true"
-            className="animate-spin-slow 3xl:h-[1.771vw] h-5 md:h-6"
+            className="animate-spin-slow 3xl:h-[1.042vw] h-5 md:h-6"
           />
 
           <span>Quero entrar na lista VIP</span>

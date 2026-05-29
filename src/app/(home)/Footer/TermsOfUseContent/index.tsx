@@ -23,7 +23,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-about-mindflow"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           1. Sobre o MindFlow
         </h3>
@@ -44,7 +44,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-acceptance-of-terms"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           2. Aceitação dos termos
         </h3>
@@ -64,7 +64,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-platform-usage"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           3. Uso da plataforma
         </h3>
@@ -76,7 +76,7 @@ const TermsOfUseContent = () => {
 
         <div>
           <SectionDescription className="mb-0! text-white/75">Não é permitido:</SectionDescription>
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Utilizar a plataforma para fins ilegais;</li>
             <li>Tentar acessar áreas restritas sem autorização;</li>
             <li>Interferir no funcionamento do site;</li>
@@ -99,7 +99,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-intellectual-property"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           4. Propriedade intelectual
         </h3>
@@ -124,7 +124,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-content-and-information"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           5. Conteúdos e informações
         </h3>
@@ -150,7 +150,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-registration-and-communications"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           6. Cadastro e comunicações
         </h3>
@@ -174,7 +174,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-limitation-of-liability"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           7. Limitação de responsabilidade
         </h3>
@@ -183,7 +183,7 @@ const TermsOfUseContent = () => {
           <SectionDescription className="mb-0! text-white/75">
             O MindFlow não se responsabiliza por:
           </SectionDescription>
-          <ul className="3xl:text-[1.46vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
+          <ul className="3xl:text-[1.042vw] list-inside list-disc text-[clamp(1rem,3vw,1.25rem)] font-light text-white/75">
             <li>Decisões tomadas pelo usuário com base nos conteúdos apresentados;</li>
             <li>Interrupções temporárias da plataforma;</li>
             <li>Problemas técnicos externos;</li>
@@ -205,7 +205,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-third-party-links"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           8. Links para terceiros
         </h3>
@@ -222,7 +222,7 @@ const TermsOfUseContent = () => {
       <section aria-labelledby="terms-changes" className="3xl:gap-[1.667vw] grid gap-4 md:gap-8">
         <h3
           id="terms-changes"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           9. Alterações nos termos
         </h3>
@@ -245,7 +245,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-privacy-and-data-protection"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           10. Privacidade e proteção de dados
         </h3>
@@ -264,7 +264,7 @@ const TermsOfUseContent = () => {
       >
         <h3
           id="terms-applicable-law"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           11. Legislação aplicável
         </h3>
@@ -281,7 +281,7 @@ const TermsOfUseContent = () => {
       <section aria-labelledby="terms-contact" className="3xl:gap-[1.667vw] grid gap-4 md:gap-8">
         <h3
           id="terms-contact"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           12. Contato
         </h3>
@@ -297,7 +297,7 @@ const TermsOfUseContent = () => {
       <section aria-labelledby="terms-consent" className="3xl:gap-[1.667vw] grid gap-4 md:gap-8">
         <h3
           id="terms-consent"
-          className="3xl:text-[1.667vw] text-lg font-semibold text-white md:text-2xl"
+          className="3xl:text-[1.25vw] text-lg font-semibold text-white md:text-2xl"
         >
           13. Consentimento
         </h3>

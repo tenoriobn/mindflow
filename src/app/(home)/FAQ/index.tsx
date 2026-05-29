@@ -158,12 +158,12 @@ const FAQ = () => {
           rel="noopener noreferrer"
           href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20entender%20melhor%20como%20o%20MindFlow%20pode%20me%20ajudar."
           aria-describedby="faq-description"
-          className="faq-button bg-gradient-button bg-gradient-button-whatsapp 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 active:scale-90! max-lg:self-center md:max-w-max md:px-16"
+          className="faq-button bg-gradient-button bg-gradient-button-whatsapp 3xl:text-[1.042vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 active:scale-90! max-lg:self-center md:max-w-max md:px-16"
         >
           <WhatsappIcon
             aria-hidden="true"
             focusable="false"
-            className="animate-spin-slow 3xl:h-[1.771vw] h-5 md:h-6"
+            className="animate-spin-slow 3xl:h-[1.25vw] h-5 md:h-6"
           />
 
           <span>Perguntar no Whatsapp</span>

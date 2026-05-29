@@ -137,7 +137,7 @@ const HeroSection = () => {
       <div
         ref={sectionRef}
         aria-labelledby="hero-section-title"
-        className="3xl:pt-[7.913vw] 3xl:pb-[1.667vw] flex min-h-svh w-full flex-col self-center pt-23 pb-4 md:pt-31 md:pb-8 xl:pt-35"
+        className="3xl:pt-[7.292vw] 3xl:pb-[1.667vw] flex min-h-svh w-full flex-col self-center pt-23 pb-4 md:pt-31 md:pb-8 xl:pt-35"
       >
         <div className="3xl:p-[1.667vw] 3xl:rounded-tl-[2.083vw] 3xl:rounded-r-[2.083vw] relative isolate grid flex-1 items-center overflow-hidden rounded-tl-[1.25rem] rounded-r-[1.25rem] bg-slate-950 p-4 md:rounded-tl-[2.5rem] md:rounded-r-[2.5rem] md:p-8">
           <Image
@@ -168,12 +168,12 @@ const HeroSection = () => {
           >
             <h2
               id="hero-section-title"
-              className="3xl:text-[4.8vw] 3xl:mb-[1.667vw] mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
+              className="3xl:text-[3.438vw] 3xl:mb-[1.667vw] mb-4 text-[8.8vw] font-semibold whitespace-nowrap text-white/95 md:mb-8 md:text-[4.125rem]"
             >
               Liberte sua mente.
             </h2>
 
-            <p className="3xl:text-[1.46vw] 3xl:mb-[3.334vw] mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
+            <p className="3xl:text-[1.042vw] 3xl:mb-[3.334vw] mb-8 text-[clamp(1rem,3vw,1.25rem)] font-light text-white/90 md:mb-16">
               <span className="font-medium">Descubra o Método MindFlow:</span> um treinamento online
               que combina neurociência, design e produtividade para te ajudar a ter foco e
               resultados, sem estresse e sem fórmulas mágicas.
@@ -183,7 +183,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://wa.me/5511999999999?text=Olá!%20Conheci%20o%20MindFlow%20e%20gostaria%20de%20entrar%20na%20Lista%20VIP%20para%20receber%20mais%20informações."
-              className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.46vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
+              className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.042vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
             >
               Entrar na Lista VIP
             </Link>
