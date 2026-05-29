@@ -5,7 +5,7 @@ import { useMenuMobile } from './useMenuMobile';
 import Navbar from './Navbar';
 import MenuToggleButton from './MenuToggleButton';
 import Logo from './Logo';
-import CTAButton from './CTAButton';
+import CTALink from './CTALink';
 
 const Header = () => {
   const { isMenuActive, setIsMenuActive } = useMenuMobile();
@@ -27,7 +27,7 @@ const Header = () => {
 
         <Navbar isMenuActive={isMenuActive} setIsMenuActive={setIsMenuActive} variant="inline" />
 
-        <CTAButton className="hidden justify-self-end xl:block">Começar agora</CTAButton>
+        <CTALink className="hidden justify-self-end xl:block">Começar agora</CTALink>
       </div>
     </header>
   );

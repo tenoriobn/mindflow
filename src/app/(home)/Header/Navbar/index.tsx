@@ -1,6 +1,6 @@
 import { MENU_LINKS } from './menuLinks';
 import type { NavbarProps } from './navbar.type';
-import CTAButton from '../CTAButton';
+import CTALink from '../CTALink';
 import { useEffect, useRef } from 'react';
 import { useGSAP, gsap } from 'src/lib/gsap';
 import { useActiveSection } from './useActiveSection';
@@ -138,11 +138,12 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
           })}
 
           <li>
-            <CTAButton
+            <CTALink
+              onClick={() => setIsMenuActive(false)}
               className={`self-end justify-self-center ${!isDropdownOnly ? 'xl:hidden' : ''}`}
             >
               Começar agora
-            </CTAButton>
+            </CTALink>
           </li>
         </ul>
       </nav>

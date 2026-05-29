@@ -89,7 +89,7 @@ const HeaderFixed = () => {
         ref={headerRef}
         className="3xl:right-[4.375vw] 3xl:top-[1.667vw] fixed top-4 right-4 isolate z-50 rounded-full shadow-lg/35 md:top-8 md:right-8 2xl:right-21"
       >
-        <div className="bg-gradient-header 3xl:p-[.625vw] relative flex items-center justify-center rounded-full bg-slate-950 p-3 md:p-4">
+        <div className="3xl:p-[.625vw] relative flex items-center justify-center rounded-full bg-[rgba(46,46,76,0.87)] p-3 md:p-4">
           <MenuToggleButton
             isMenuActive={isMenuActive}
             Icon={isMenuActive ? CloseIcon : MenuIcon}

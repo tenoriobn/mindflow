@@ -39,7 +39,7 @@ const MenuToggleButton = ({
       ref={buttonRef}
       type="button"
       aria-controls="primary-navigation"
-      className={`transition-default flex h-9 w-9 items-center justify-center rounded-full bg-slate-300 text-slate-950 hover:bg-slate-300/75 active:scale-90 active:bg-slate-300/90 ${className}`}
+      className={`transition-default flex h-9 w-9 items-center justify-center rounded-full bg-slate-300/75 text-slate-950 hover:bg-slate-300/90 active:scale-90 active:bg-slate-300 ${className}`}
       {...props}
     >
       <span className="menu-toggle-icon flex items-center justify-center">
