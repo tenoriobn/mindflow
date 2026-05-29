@@ -1,56 +1,37 @@
 'use client';
 import { useRef } from 'react';
-import type { MenuToggleButtonProps } from './menuToggleButton.type';
 import { useGSAP, gsap } from 'src/lib/gsap';
+import type { MenuToggleButtonProps } from './menuToggleButton.type';
 
 const MenuToggleButton = ({
-  icon: Icon,
+  Icon,
   className = '',
   iconClassName = '',
   isMenuActive,
   ...props
 }: MenuToggleButtonProps) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
-
   const isFirstRender = useRef(true);
 
   useGSAP(
     () => {
-      if (window.innerWidth >= 1280) {
-        return;
-      }
-
       if (isFirstRender.current) {
         isFirstRender.current = false;
-
         return;
       }
 
       const icon = buttonRef.current?.querySelector('.menu-toggle-icon');
-
       if (!icon) {
         return;
       }
 
       gsap.fromTo(
         icon,
-        {
-          rotate: -90,
-          scale: 0.7,
-        },
-        {
-          rotate: 0,
-          scale: 1,
-
-          duration: 0.4,
-
-          ease: 'back.out(2.2)',
-        }
+        { rotate: -90, scale: 0.7 },
+        { rotate: 0, scale: 1, duration: 0.4, ease: 'back.out(2.2)' }
       );
     },
-    {
-      dependencies: [isMenuActive],
-    }
+    { dependencies: [isMenuActive], scope: buttonRef }
   );
 
   return (
