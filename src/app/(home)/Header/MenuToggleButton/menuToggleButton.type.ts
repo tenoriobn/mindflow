@@ -1,7 +1,8 @@
-import type { ButtonHTMLAttributes, ElementType } from 'react';
+import type { ButtonHTMLAttributes, FC, SVGProps } from 'react';
 
 export type MenuToggleButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  icon: ElementType;
+  Icon: FC<SVGProps<SVGSVGElement>>;
   iconClassName?: string;
   isMenuActive: boolean;
+  className?: string;
 };

@@ -46,7 +46,7 @@ const FAQAccordion = () => {
                   className="3xl:p-[1.667vw] relative flex w-full cursor-pointer flex-col p-4 text-left md:p-8"
                 >
                   <div className="xs:gap-2 flex w-full items-center justify-between gap-3 text-white/95 transition-colors duration-300">
-                    <span className="3xl:text-[1.667vw] text-lg font-semibold text-white/95 md:text-2xl">
+                    <span className="3xl:text-[1.25vw] text-lg font-semibold text-white/95 md:text-2xl">
                       {title}
                     </span>
 
@@ -70,7 +70,7 @@ const FAQAccordion = () => {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="3xl:text-[1.46vw] 3xl:mt-[1.25vw] mt-4 overflow-hidden text-base text-white/75 md:mt-6 md:text-xl">
+                      <p className="3xl:text-[1.042vw] 3xl:mt-[1.25vw] mt-4 overflow-hidden text-base text-white/75 md:mt-6 md:text-xl">
                         {description}
                       </p>
                     </div>

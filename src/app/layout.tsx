@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import SmoothScrolling from 'src/components/SmoothScrollProvider';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -114,9 +113,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-br" className={`${inter.variable} h-full antialiased`}>
-      <body className={`${inter.className} flex min-h-full flex-col bg-slate-300`}>
-        <SmoothScrolling>{children}</SmoothScrolling>
-      </body>
+      <body className={`${inter.className} flex min-h-full flex-col bg-slate-300`}>{children}</body>
     </html>
   );
 }
