@@ -5,3 +5,7 @@ export interface NavbarProps {
   setIsMenuActive: Dispatch<SetStateAction<boolean>>;
   variant?: 'inline' | 'dropdown';
 }
+
+export interface SectionLink {
+  href: string;
+}

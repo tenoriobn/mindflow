@@ -77,7 +77,7 @@ const Footer = () => {
               filter: 'blur(6px)',
             },
             {
-              autoAlpha: 1,
+              autoAlpha: 0.75,
               scale: 1,
               yPercent: 0,
               filter: 'blur(0px)',
@@ -150,7 +150,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={ariaLabel}
-                  className="footer-social-link transition-default transform-[translateZ(0)] opacity-0 backface-hidden hover:opacity-95 active:scale-90 active:opacity-100"
+                  className="footer-social-link transition-default transform-[translateZ(0)] opacity-0 backface-hidden hover:opacity-95! active:scale-90! active:opacity-100!"
                 >
                   <Icon className="3xl:h-[2.292vw] h-11" aria-hidden="true" focusable="false" />
                 </Link>

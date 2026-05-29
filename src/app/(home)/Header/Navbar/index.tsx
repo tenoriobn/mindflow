@@ -3,20 +3,28 @@ import type { NavbarProps } from './navbar.type';
 import CTAButton from '../CTAButton';
 import { useEffect, useRef } from 'react';
 import { useGSAP, gsap } from 'src/lib/gsap';
+import { useActiveSection } from './useActiveSection';
+
+const SCROLL_DURATION = 1.2;
 
 const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarProps) => {
   const navRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<GSAPTimeline | null>(null);
-  const activeHref = MENU_LINKS[0].href;
+  const activeHref = useActiveSection(MENU_LINKS);
 
   const isDropdownOnly = variant === 'dropdown';
 
   const handleScrollToSection = (href: string) => {
     gsap.to(window, {
-      duration: 1.2,
-      scrollTo: { y: href, offsetY: 0 },
+      duration: SCROLL_DURATION,
+      overwrite: 'auto',
+      scrollTo: {
+        y: href,
+        offsetY: 0,
+      },
       ease: 'power3.inOut',
     });
+
     setIsMenuActive(false);
   };
 

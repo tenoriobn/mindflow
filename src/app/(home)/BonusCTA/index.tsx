@@ -244,7 +244,7 @@ const BonusCTA = () => {
         <button
           type="button"
           aria-describedby="bonus-cta-description"
-          className="bonus-button bg-gradient-button bg-gradient-button-secondary 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex w-full items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 opacity-0 active:scale-90 max-lg:self-center md:max-w-max md:px-16"
+          className="bonus-button bg-gradient-button bg-gradient-button-secondary 3xl:text-[1.46vw] 3xl:px-[3.334vw] 3xl:py-[.834vw] xs:px-8 3xl:gap-[.625vw] flex w-full items-center justify-center gap-3 rounded-full px-4 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-white/95 opacity-0 active:scale-90! max-lg:self-center md:max-w-max md:px-16"
         >
           <DiamondIcon
             aria-hidden="true"
