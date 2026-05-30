@@ -58,8 +58,8 @@ const FAQ = () => {
 
             scrollTrigger: {
               trigger: section,
-              start: desktop ? 'top 35%' : 'top 70%',
-              end: desktop ? 'top 15%' : 'top 55%',
+              start: desktop ? 'top 60%' : 'top 70%',
+              end: desktop ? 'top 40%' : 'top 55%',
               scrub: 0.8,
             },
           });
@@ -97,7 +97,7 @@ const FAQ = () => {
         }
       );
 
-      faqItems.forEach((item, index) => {
+      faqItems.forEach((item) => {
         gsap.from(item, {
           opacity: 0,
           scale: 0.96,
@@ -107,16 +107,13 @@ const FAQ = () => {
           duration: 0.8,
           ease: 'power3.out',
 
-          clearProps: 'all',
-
           scrollTrigger: {
             trigger: item,
-            start: 'top 95%',
-            end: 'top 85%',
-            scrub: 0.8,
-          },
 
-          delay: index * 0.03,
+            start: 'top 90%',
+
+            toggleActions: 'play reverse play reverse',
+          },
         });
       });
 

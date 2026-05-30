@@ -137,16 +137,21 @@ const BaseModal = ({ isOpen, onClose, title, ariaLabelledby, children }: BaseMod
     }
   );
 
-  useEffect(() => {
-    const tl = timelineRef.current;
+  useGSAP(
+    () => {
+      const tl = timelineRef.current;
 
-    if (!tl || isOpen) {
-      return;
+      if (!tl || isOpen) {
+        return;
+      }
+
+      tl.timeScale(2.4);
+      tl.reverse();
+    },
+    {
+      dependencies: [isOpen],
     }
-
-    tl.timeScale(2.4);
-    tl.reverse();
-  }, [isOpen]);
+  );
 
   if (!shouldRender) {
     return null;

@@ -1,7 +1,7 @@
 import { MENU_LINKS } from './menuLinks';
 import type { NavbarProps } from './navbar.type';
 import CTALink from '../CTALink';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP, gsap } from 'src/lib/gsap';
 import { useActiveSection } from './useActiveSection';
 
@@ -74,7 +74,7 @@ const Navbar = ({ isMenuActive, setIsMenuActive, variant = 'inline' }: NavbarPro
     }
   }, []);
 
-  useEffect(() => {
+  useGSAP(() => {
     const tl = timelineRef.current;
 
     if (!tl) {
