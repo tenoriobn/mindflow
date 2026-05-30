@@ -28,7 +28,7 @@ const MenuToggleButton = ({
       gsap.fromTo(
         icon,
         { rotate: -90, scale: 0.7 },
-        { rotate: 0, scale: 1, duration: 0.4, ease: 'back.out(2.2)' }
+        { rotate: 0, scale: 1, duration: 0.45, ease: 'back.out(2.2)' }
       );
     },
     { dependencies: [isMenuActive], scope: buttonRef }

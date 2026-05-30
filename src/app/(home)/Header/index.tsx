@@ -18,7 +18,7 @@ const Header = () => {
         <MenuToggleButton
           isMenuActive={isMenuActive}
           Icon={isMenuActive ? CloseIcon : MenuIcon}
-          iconClassName={isMenuActive ? 'h-3.5 w-5' : ''}
+          iconClassName={isMenuActive ? 'h-3.5' : 'h-3'}
           aria-label="Abrir menu de navegação"
           aria-expanded={isMenuActive}
           onClick={() => setIsMenuActive((prev) => !prev)}

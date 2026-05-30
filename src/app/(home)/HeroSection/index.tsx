@@ -183,7 +183,7 @@ const HeroSection = () => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://wa.me/5511999999999?text=Olá!%20Conheci%20o%20MindFlow%20e%20gostaria%20de%20entrar%20na%20Lista%20VIP%20para%20receber%20mais%20informações."
-              className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.042vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
+              className="bg-gradient-button bg-gradient-button-primary 3xl:text-[1.042vw] 3xl:max-w-max 3xl:px-[3.334vw] 3xl:py-[.834vw] max-w-76 rounded-full px-8 py-4 text-center text-[clamp(1rem,3vw,1.25rem)] font-medium text-slate-950 active:scale-90 max-md:w-full md:px-16"
             >
               Entrar na Lista VIP
             </Link>
